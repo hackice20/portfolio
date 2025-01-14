@@ -1,0 +1,243 @@
+export default function Projects() {
+  return (
+    <main className="min-h-screen p-8 md:p-24 font-mono">
+      <div className="max-w-3xl mx-auto space-y-8">
+        {/* Page Header */}
+        <section className="space-y-2">
+          <h1 className="text-4xl font-bold">projects</h1>
+          <p className="text-muted-foreground">
+            Here are some of the projects I've been working on:
+          </p>
+        </section>
+
+        {/* Major Projects Section */}
+        <section className="space-y-4">
+          <h2 className="text-3xl font-semibold">Major Projects</h2>
+
+          {/* Sync Script Project Card */}
+          <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold">Sync Script</h3>
+            <ul className="mt-2 text-muted-foreground list-disc pl-5">
+              <li>Developed Sync-Script, a real-time collaborative text editor supporting multiple users simultaneously.</li>
+              <li>Implemented instant synchronization of document changes across clients using Web-Sockets.</li>
+              <li>Configured automatic periodic saving to prevent data loss during editing sessions.</li>
+              <li>Designed an intuitive interface with customizable toolbar options for enhanced user experience.</li>
+              <li>Enabled seamless document management through unique identifiers for creating and accessing documents.</li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://github.com/hackice20/Sync-Script"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://sync-script-lac.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
+              >
+                Live Demo
+              </a>
+            </div>
+          </div>
+
+         
+
+          {/* AI Search Agent Project Card */}
+          <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold">AI Search Agent (Perplexity Clone)</h3>
+            <ul className="mt-2 text-muted-foreground list-disc pl-5">
+              <li>Leveraged Llama-3.3 AI for natural language understanding and processing.</li>
+              <li>Integrated Google Custom Search API to provide reliable web search results.</li>
+              <li>Created a clean, responsive UI to ensure seamless user experience across devices.</li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://github.com/hackice20/perplexity-clone"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://perplexity-clone-drab.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
+              >
+                Live Demo
+              </a>
+            </div>
+          </div>
+
+ {/* Justice-GPT Project Card */}
+ <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold">Justice-GPT</h3>
+            <ul className="mt-2 text-muted-foreground list-disc pl-5">
+              <li>Developed Gemini AI Crime Case Generator, a web-based tool to analyze crime cases based on the Indian Constitution.</li>
+              <li>Integrates the Gemini API to map user-submitted crime details to relevant legal articles and case analysis.</li>
+              <li>Features a responsive UI built with React, TypeScript, and Tailwind CSS for a seamless user experience across devices.</li>
+              <li>Handles errors gracefully, showing appropriate error messages if issues arise during data processing or API calls.</li>
+              <li>Secures sensitive API keys using environment variables to ensure privacy and data protection.</li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://github.com/hackice20/justice-gpt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://yashs-justice-gpt.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
+              >
+                Live Demo
+              </a>
+            </div>
+          </div>
+
+          {/* Micro-GPT Project Card */}
+          <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold">Micro-GPT</h3>
+            <ul className="mt-2 text-muted-foreground list-disc pl-5">
+              <li>Implemented "Attention Is All You Need" architecture in Python for local GPT-style query handling.</li>
+              <li>Designed a lightweight model optimized for offline text embeddings and question-answering.</li>
+              <li>Prioritized data privacy, faster response times, and control in local environments.</li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://github.com/hackice20/micro-gpt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+           {/* FinWebAI Project Card */}
+           <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold">FinWebAI</h3>
+            <ul className="mt-2 text-muted-foreground list-disc pl-5">
+              <li>Developed a multi-agent system integrating Groq, YFinance, and DuckDuckGo to provide financial analysis and web search results.</li>
+              <li>Finance AI Agent delivers stock analysis, company news, and financial metrics in a structured format.</li>
+              <li>Web Search Agent ensures relevant and source-based information for comprehensive queries.</li>
+              <li>Collaborates between agents to generate unified responses with transparent data sources.</li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://github.com/hackice20/FinWebAI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                GitHub
+              </a>
+            </div>
+            </div>
+        </section>
+
+        {/* Minor Projects Section */}
+        <section className="space-y-4">
+          <h2 className="text-3xl font-semibold">Minor Projects</h2>
+          {/* Invoice Generator Project Card */}
+          <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold">Invoice Generator</h3>
+            <ul className="mt-2 text-muted-foreground list-disc pl-5">
+              <li>A user-friendly invoice generator with real-time preview and professional design.</li>
+              <li>Features customer and business details forms with accurate validation and business stamp upload.</li>
+              <li>Dynamic invoice item addition with automatic calculation of totals.</li>
+              <li>Real-time invoice preview with professional layout, terms, and conditions.</li>
+              <li>Responsive design with split-screen interface for both desktop and mobile optimization.</li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://github.com/hackice20/invoice-gen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://invoice-gen-delta.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-secondary text-secondary-foreground rounded hover:bg-secondary/90"
+              >
+                Live Demo
+              </a>
+            </div>
+          </div>
+          {/* GoLang TODO CLI Project Card */}
+          <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold">GoLang TODO CLI</h3>
+            <ul className="mt-2 text-muted-foreground list-disc pl-5">
+              <li>Developed a command-line interface tool in Go for managing to-do tasks efficiently.</li>
+              <li>Implemented functionality to add, list, edit, and toggle tasks directly from the terminal.</li>
+              <li>Optimized user interaction by simplifying task management through intuitive CLI commands.</li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://github.com/hackice20/todo-cli-go"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+           {/* LLM-TxtFile Project Card */}
+           <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+            <h3 className="text-2xl font-semibold">LLM-TxtFile Chatting</h3>
+            <ul className="mt-2 text-muted-foreground list-disc pl-5">
+              <li>A project that integrates large language models (LLMs) with text files for real-time conversation.</li>
+              <li>Utilizes the Ollama and Llama3 models (or others as per user preference) for text-based interactions.</li>
+              <li>Setup instructions: Create a Python environment and install the required packages: numpy, ollama, and llama3.</li>
+              <li>Supports multiple execution environments based on CPU/GPU capabilities for efficient processing.</li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
+              <a
+                href="https://github.com/hackice20/llm-txtfile-chatting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+          {/* Multithreaded HTTP Server in Rust Project Card */}
+<div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+  <h3 className="text-2xl font-semibold">Multithreaded HTTP Server in Rust</h3>
+  <ul className="mt-2 text-muted-foreground list-disc pl-5">
+    <li>A simple multithreaded HTTP server written in Rust that handles multiple client requests concurrently using threads.</li>
+    <li>Responds with a basic "Hello, World!" message to any incoming HTTP request .</li>
+    <li>Supports testing via multiple simultaneous requests using browser tabs or curl command-line tool.</li>
+  </ul>
+  <div className="flex space-x-4 mt-4">
+    <a
+      href="https://github.com/hackice20/multi-threaded-server"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+    >
+      GitHub
+    </a>
+  </div>
+</div>
+
+        </section>
+      </div>
+    </main>
+  );
+}
