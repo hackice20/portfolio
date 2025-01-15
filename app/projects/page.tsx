@@ -200,10 +200,13 @@ export default function Projects() {
            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold">LLM-TxtFile Chatting</h3>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
-              <li>A project that integrates large language models (LLMs) with text files for real-time conversation.</li>
-              <li>Utilizes the Ollama and Llama3 models (or others as per user preference) for text-based interactions.</li>
-              <li>Setup instructions: Create a Python environment and install the required packages: numpy, ollama, and llama3.</li>
-              <li>Supports multiple execution environments based on CPU/GPU capabilities for efficient processing.</li>
+              <li>Engineered a Retrieval-Augmented Generation (RAG) application 
+using Llama3 8B with Ollama, delivering enhanced text generation 
+capabilities. </li>
+              <li>Designed custom document ingestion and retrieval pipelines, 
+optimizing response accuracy without relying on Lang-chain.</li>
+              <li>Streamlined real-time text processing by implementing efficient 
+search, ranking, and low-latency retrieval for large datasets. </li>
             </ul>
             <div className="flex space-x-4 mt-4">
               <a
