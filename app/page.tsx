@@ -50,7 +50,7 @@ export default function Home() {
             <span>|</span>
             <a href="https://twitter.com/hackiice" className="hover:underline">[twitter]</a>
             <span>|</span>
-            <a href="hackice2004@gmail.com" className="hover:underline">[email]</a>
+            <a href="mailto:hackice2004@gmail.com" className="hover:underline">[email]</a>
           </div>
         </footer>
       </div>
