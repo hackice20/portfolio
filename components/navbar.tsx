@@ -14,13 +14,13 @@ export function Navbar() {
        
         <li>
           <Link href="/projects">
-            Projects
+           [Projects]
           </Link>
         </li>
        
         <li>
           <Link href="/blogs">
-            Blogs
+            [Blogs]
           </Link>
         </li>
       
