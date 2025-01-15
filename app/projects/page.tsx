@@ -19,11 +19,22 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold">Sync Script</h3>
             {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">Mongo DB</span>
-    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded">Socket io</span>
-    <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded">Node</span>
-    <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded">React</span>
-    <span className="px-2 py-1 bg-red-500 text-white text-sm rounded">Express</span>
+    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
+  Mongo DB
+</span>
+<span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+  Socket io
+</span>
+<span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600 transition-colors duration-200">
+  Node
+</span>
+<span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
+  React
+</span>
+<span className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors duration-200">
+  Express
+</span>
+
   </div>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
               <li>Developed Sync-Script, a real-time collaborative text editor supporting multiple users simultaneously.</li>
@@ -59,11 +70,25 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold">AI Search Agent (Perplexity Clone)</h3>
             {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">Groq</span>
-    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded">Google Search API</span>
-    <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded">Node</span>
-    <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded">React</span>
-    <span className="px-2 py-1 bg-red-500 text-white text-sm rounded">Express</span>
+    {/* Skill Badges */}
+<div className="flex flex-wrap gap-2 mt-3">
+  <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600">
+    Groq
+  </span>
+  <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600">
+    Google Search API
+  </span>
+  <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600">
+    Node
+  </span>
+  <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600">
+    React
+  </span>
+  <span className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600">
+    Express
+  </span>
+</div>
+
   </div>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
               <li>Leveraged Llama-3.3 AI for natural language understanding and processing.</li>
@@ -95,8 +120,13 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold">Justice-GPT</h3>
    {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">Gemini</span>
-    <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded">React</span>
+    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
+  Gemini AI API
+</span>
+<span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
+  React
+</span>
+
   </div>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
               <li>Developed Gemini AI Crime Case Generator, a web-based tool to analyze crime cases based on the Indian Constitution.</li>
@@ -130,10 +160,19 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold">Micro-GPT</h3>
             {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">Python</span>
-    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded">Jupyter Notebook</span>
-    <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded">Embeddings</span>
-    <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded">Attention</span>
+    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
+  Python
+</span>
+<span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+  Jupyter Notebook
+</span>
+<span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600 transition-colors duration-200">
+  Embeddings
+</span>
+<span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
+  Attention
+</span>
+
   </div>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
               <li>Implemented "Attention Is All You Need" architecture in Python for local GPT-style query handling.</li>
@@ -156,9 +195,16 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold">FinWebAI</h3>
              {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">Groq</span>
-    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded">Phidata</span>
-    <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded">Python</span>
+   <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
+  Groq
+</span>
+<span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+  Phidata
+</span>
+<span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600 transition-colors duration-200">
+  Python
+</span>
+
   </div>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
               <li>Developed a multi-agent system integrating Groq, YFinance, and DuckDuckGo to provide financial analysis and web search results.</li>
@@ -187,8 +233,13 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold">Invoice Generator</h3>
           {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">html2pdf</span>
-    <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded">React</span>
+   <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
+  html2pdf
+</span>
+<span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
+  React
+</span>
+
   </div>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
               <li>A user-friendly invoice generator with real-time preview and professional design.</li>
@@ -221,8 +272,8 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold">GoLang TODO CLI</h3>
             {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">Golang</span>
-    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded">JSON</span>
+    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">Golang</span>
+    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">JSON</span>
   </div>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
               <li>Developed a command-line interface tool in Go for managing to-do tasks efficiently.</li>
@@ -245,10 +296,10 @@ export default function Projects() {
             <h3 className="text-2xl font-semibold">LLM-TxtFile Chatting</h3>
              {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">Llama3-8B</span>
-    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded">Ollama</span>
-    <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded">Embeddings</span>
-    <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded">RAG</span>
+    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">Llama3-8B</span>
+    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">Ollama</span>
+    <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600 transition-colors duration-200">Embeddings</span>
+    <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">RAG</span>
   </div>
             <ul className="mt-2 text-muted-foreground list-disc pl-5">
               <li>Engineered a Retrieval-Augmented Generation (RAG) application 
@@ -275,8 +326,8 @@ search, ranking, and low-latency retrieval for large datasets. </li>
   <h3 className="text-2xl font-semibold">Multithreaded HTTP Server in Rust</h3>
   {/* Skill Badges */}
   <div className="flex flex-wrap gap-2 mt-3">
-    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded">Rust</span>
-    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded">Multi Threading</span>
+    <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">Rust</span>
+    <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">Multi Threading</span>
   </div>
   <ul className="mt-2 text-muted-foreground list-disc pl-5">
     <li>A simple multithreaded HTTP server written in Rust that handles multiple client requests concurrently using threads.</li>
