@@ -46,9 +46,11 @@ export default function Home() {
 
         <footer className="pt-8 text-sm text-muted-foreground">
           <div className="flex gap-4">
-            <a href="https://github.com/hackice20" className="hover:underline">github</a>
+            <a href="https://github.com/hackice20" className="hover:underline">[github]</a>
             <span>|</span>
-            <a href="https://twitter.com/hackiice" className="hover:underline">twitter</a>
+            <a href="https://twitter.com/hackiice" className="hover:underline">[twitter]</a>
+            <span>|</span>
+            <a href="hackice2004@gmail.com" className="hover:underline">[email]</a>
           </div>
         </footer>
       </div>
