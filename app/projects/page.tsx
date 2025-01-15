@@ -132,8 +132,6 @@ export default function Projects() {
               <li>Developed Gemini AI Crime Case Generator, a web-based tool to analyze crime cases based on the Indian Constitution.</li>
               <li>Integrates the Gemini API to map user-submitted crime details to relevant legal articles and case analysis.</li>
               <li>Features a responsive UI built with React, TypeScript, and Tailwind CSS for a seamless user experience across devices.</li>
-              <li>Handles errors gracefully, showing appropriate error messages if issues arise during data processing or API calls.</li>
-              <li>Secures sensitive API keys using environment variables to ensure privacy and data protection.</li>
             </ul>
             <div className="flex space-x-4 mt-4">
               <a
