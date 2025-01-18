@@ -14,6 +14,41 @@ export default function Projects() {
         <section className="space-y-4">
           <h2 className="text-3xl font-semibold">Major Projects</h2>
 
+          {/* Bolty Project Card */}
+<div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+  <h3 className="text-2xl font-semibold">Bolty</h3>
+  {/* Skill Badges */}
+  <div className="flex flex-wrap gap-2 mt-3">
+    <span className="px-2 py-1 bg-indigo-500 text-white text-sm rounded hover:bg-indigo-600 transition-colors duration-200">
+      WebContainer API
+    </span>
+    <span className="px-2 py-1 bg-teal-500 text-white text-sm rounded hover:bg-teal-600 transition-colors duration-200">
+      TypeScript
+    </span>
+    <span className="px-2 py-1 bg-pink-500 text-white text-sm rounded hover:bg-pink-600 transition-colors duration-200">
+      Claude AI API
+    </span>
+  </div>
+  <ul className="mt-2 text-muted-foreground list-disc pl-5">
+    <li>Utilized the WebContainer API to enable an in-browser Node.js environment for a seamless development experience.</li>
+    <li>Integrated Claude AI API for dynamic content generation and enhanced interactivity.</li>
+    <li>Developed using TypeScript for robust type safety and maintainability.</li>
+    <li>Implemented a code editor using Monaco Editor, allowing users to write and test code directly in the browser due to web containers.</li>
+    <li>Created a responsive UI with Vite-powered development and Tailwind CSS for modern styling.</li>
+  </ul>
+  <div className="flex space-x-4 mt-4">
+    <a
+      href="https://github.com/hackice20/boltly"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+    >
+      GitHub
+    </a>
+  </div>
+</div>
+
+
           {/* Sync Script Project Card */}
           <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
             <h3 className="text-2xl font-semibold">Sync Script</h3>
