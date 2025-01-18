@@ -1,4 +1,6 @@
 import { Terminal } from "lucide-react"
+import { FaJava, FaPython, FaJs, FaRust } from "react-icons/fa"
+import { SiCplusplus, SiTypescript, SiReact, SiExpress, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostgresql, SiSqlite, SiGit, SiGithub, SiPostman, SiDocker, SiLinux, SiPrisma ,SiGo} from "react-icons/si"
 
 export default function Home() {
   return (
@@ -12,6 +14,60 @@ export default function Home() {
           <p className="text-muted-foreground">
             mainly work in Web Dev, Gen AI and a bit of ML.
           </p>
+        </section>
+
+         {/* Skills Section */}
+        <section id="skills" className="space-y-2 pt-14">
+          <h2 className="text-2xl font-bold">skills</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Languages */}
+            <div className="border p-6 rounded-lg space-y-2">
+              <h3 className="font-bold">Languages</h3>
+              <div className="flex flex-wrap gap-4">
+                <FaJava className="w-8 h-8" />
+                <FaPython className="w-8 h-8" />
+                <SiCplusplus className="w-8 h-8" />
+                <FaJs className="w-8 h-8" />
+                <SiTypescript className="w-8 h-8" />
+                <FaRust className="w-8 h-8" />
+                <SiGo className="w-8 h-8" />
+              </div>
+            </div>
+
+            {/* Frameworks */}
+            <div className="border p-6 rounded-lg space-y-2">
+              <h3 className="font-bold">Frameworks</h3>
+              <div className="flex flex-wrap gap-4">
+                <SiReact className="w-8 h-8" />
+                <SiExpress className="w-8 h-8" />
+                <SiNextdotjs className="w-8 h-8" />
+                <SiTailwindcss className="w-8 h-8" />
+              </div>
+            </div>
+
+            {/* Databases */}
+            <div className="border p-6 rounded-lg space-y-2">
+              <h3 className="font-bold">Databases</h3>
+              <div className="flex flex-wrap gap-4">
+                <SiMongodb className="w-8 h-8" />
+                <SiPostgresql className="w-8 h-8" />
+                <SiSqlite className="w-8 h-8" />
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="border p-6 rounded-lg space-y-2">
+              <h3 className="font-bold">Tools</h3>
+              <div className="flex flex-wrap gap-4">
+                <SiGit className="w-8 h-8" />
+                <SiGithub className="w-8 h-8" />
+                <SiPostman className="w-8 h-8" />
+                <SiDocker className="w-8 h-8" />
+                <SiLinux className="w-8 h-8" />
+                <SiPrisma className="w-8 h-8" />
+              </div>
+            </div>
+          </div>
         </section>
 
        {/* <section id="projects" className="space-y-2 pt-14">
