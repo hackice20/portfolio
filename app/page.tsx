@@ -104,6 +104,8 @@ export default function Home() {
           <div className="flex gap-4">
             <a href="https://github.com/hackice20" className="hover:underline">[github]</a>
             <span>|</span>
+             <a href="https://www.linkedin.com/in/yash-kamble2/" className="hover:underline">[linkedin]</a>
+            <span>|</span>
             <a href="https://twitter.com/hackice20" className="hover:underline">[twitter]</a>
             <span>|</span>
             <a href="mailto:hackice2004@gmail.com" className="hover:underline">[email]</a>
