@@ -27,7 +27,7 @@ const Projects = () => {
             </button>
             <button
               onClick={() => setShowMajorProjects(false)}
-              className={`px-4 py-2 rounded ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-gray-800'}`}
+              className={`px-4 py-2 rounded ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-black-800'}`}
             >
               Minor Projects
             </button>
