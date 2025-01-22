@@ -233,38 +233,6 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-
-            {/* FinWebAI Project Card */}
-            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold">FinWebAI</h3>
-              <div className="flex flex-wrap gap-2 mt-3">
-                <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
-                  Groq
-                </span>
-                <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
-                  Phidata
-                </span>
-                <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600 transition-colors duration-200">
-                  Python
-                </span>
-              </div>
-              <ul className="mt-2 text-muted-foreground list-disc pl-5">
-                <li>Developed a multi-agent system integrating Groq, YFinance, and DuckDuckGo to provide financial analysis and web search results.</li>
-                <li>Finance AI Agent delivers stock analysis, company news, and financial metrics in a structured format.</li>
-                <li>Web Search Agent ensures relevant and source-based information for comprehensive queries.</li>
-                <li>Collaborates between agents to generate unified responses with transparent data sources.</li>
-              </ul>
-              <div className="flex space-x-4 mt-4">
-                <a
-                  href="https://github.com/hackice20/FinWebAI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
-                >
-                  GitHub
-                </a>
-              </div>
-            </div>
           </section>
         )}
 
