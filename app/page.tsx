@@ -14,9 +14,7 @@ export default function Home() {
           <p className="text-muted-foreground">
             mainly work in Web Dev, Gen AI and a bit of ML.
           </p>
-        </section>
-
-        <section>
+           
          <div className="flex justify-center items-center min-h-screen">
       <a
         href="https://drive.google.com/file/d/1unRqggYMSWB2uhlvFay_2PE958bMi2Jg/view?usp=sharing" // Replace with your actual Google Drive resume link
@@ -27,7 +25,10 @@ export default function Home() {
         [View Resume]
       </a>
     </div>
-    </section>
+        </section>
+
+       
+    
       
          {/* Skills Section */}
         <section id="skills" className="space-y-2 pt-14">
