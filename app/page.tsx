@@ -6,13 +6,15 @@ export default function Home() {
   return (
     <main className="min-h-screen p-8 md:p-24 font-mono" id="top">
       <div className="max-w-3xl mx-auto space-y-24">
-        <section className="space-y-1">
+        <section className="space-y-2">
           <h1 className="text-4xl font-bold">hi, i am hackice20!</h1>
           <p className="text-muted-foreground">
             i am a third year student, studying information technology.
           </p>
           <p className="text-muted-foreground">
             mainly work in Web Dev, Gen AI and a bit of ML.
+
+            
           </p>
            
          <div className="flex justify-center">
