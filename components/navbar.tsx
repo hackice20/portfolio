@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { ModeToggle } from "@/components/mode-toggle"
 
 export function Navbar() {
   return (
@@ -11,25 +12,24 @@ export function Navbar() {
             hackice20
           </Link>
         </li>
-       
         <li>
           <Link href="/projects">
-           [Projects]
+            [Projects]
           </Link>
         </li>
-
-         <li>
+        <li>
           <Link href="/experience">
-           [Experience]
+            [Experience]
           </Link>
         </li>
-       
         <li>
           <Link href="/blogs">
             [Blogs]
           </Link>
         </li>
-      
+        <li className="ml-auto">
+          <ModeToggle />
+        </li>
       </ul>
     </nav>
   )
