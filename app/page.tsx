@@ -27,9 +27,6 @@ export default function Home() {
     </div>
         </section>
 
-       
-    
-      
          {/* Skills Section */}
         <section id="skills" className="space-y-2 pt-14">
           <h2 className="text-2xl font-bold">skills</h2>
