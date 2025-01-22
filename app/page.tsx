@@ -5,7 +5,7 @@ import { SiCplusplus, SiTypescript, SiReact, SiExpress, SiNextdotjs, SiTailwindc
 export default function Home() {
   return (
     <main className="min-h-screen p-8 md:p-24 font-mono" id="top">
-      <div className="max-w-3xl mx-auto space-y-24">
+      <div className="max-w-3xl mx-auto space-y-16">
         <section className="space-y-2">
           <h1 className="text-4xl font-bold">hi, i am hackice20!</h1>
           <p className="text-muted-foreground">
@@ -30,7 +30,7 @@ export default function Home() {
         </section>
 
          {/* Skills Section */}
-        <section id="skills" className="space-y-2 pt-14">
+        <section id="skills" className="space-y-2 pt-10">
           <h2 className="text-2xl font-bold">skills</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Languages */}
