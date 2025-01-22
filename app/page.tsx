@@ -15,7 +15,7 @@ export default function Home() {
             mainly work in Web Dev, Gen AI and a bit of ML.
           </p>
            
-         <div className="flex justify-center items-center min-h-screen">
+         <div className="flex justify-center">
       <a
         href="https://drive.google.com/file/d/1unRqggYMSWB2uhlvFay_2PE958bMi2Jg/view?usp=sharing" // Replace with your actual Google Drive resume link
         target="_blank"
