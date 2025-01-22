@@ -16,6 +16,19 @@ export default function Home() {
           </p>
         </section>
 
+        <section>
+         <div className="flex justify-center items-center min-h-screen">
+      <a
+        href="https://drive.google.com/file/d/1unRqggYMSWB2uhlvFay_2PE958bMi2Jg/view?usp=sharing" // Replace with your actual Google Drive resume link
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 rounded bg-primary text-primary-foreground hover:bg-primary-dark hover:text-primary-light transition"
+      >
+        [View Resume]
+      </a>
+    </div>
+    </section>
+      
          {/* Skills Section */}
         <section id="skills" className="space-y-2 pt-14">
           <h2 className="text-2xl font-bold">skills</h2>
