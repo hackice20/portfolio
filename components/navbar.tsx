@@ -17,6 +17,12 @@ export function Navbar() {
            [Projects]
           </Link>
         </li>
+
+         <li>
+          <Link href="/experience">
+           [Experience]
+          </Link>
+        </li>
        
         <li>
           <Link href="/blogs">
