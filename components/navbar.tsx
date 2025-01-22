@@ -27,7 +27,7 @@ export function Navbar() {
             [Blogs]
           </Link>
         </li>
-        <li classname="ml-auto">
+        <li>
         <Link href ="https://drive.google.com/file/d/1unRqggYMSWB2uhlvFay_2PE958bMi2Jg/view?usp=sharing">
         [view resume]
         </Link>
