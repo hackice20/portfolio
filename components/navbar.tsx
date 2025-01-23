@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ModeToggle } from "@/components/mode-toggle" // Import your toggle component
+import { ModeToggle } from "@/components/mode-toggle"
 
 export function Navbar() {
   return (
@@ -30,11 +30,10 @@ export function Navbar() {
           </li>
         </ul>
 
-        {/* Right side: Toggle */}
-        <div className="shrink-0">
-          <ModeToggle />
-        </div>
+        {/* Right side: Single Toggle */}
+        <ModeToggle />
       </div>
     </nav>
   )
 }
+
