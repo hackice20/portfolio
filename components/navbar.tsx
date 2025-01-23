@@ -30,13 +30,6 @@ export function Navbar() {
           </Link>
         </li>
 
-        <li>
-          <Link href="https://drive.google.com/file/d/1unRqggYMSWB2uhlvFay_2PE958bMi2Jg/view?usp=sharing"
-          target="_blank"
-           rel="noopener noreferrer">
-            [Resume]
-          </Link>
-          </li>
       </ul>
     </nav>
   )
