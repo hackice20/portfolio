@@ -1,3 +1,6 @@
+"use client"
+import Link from "next/link"
+import { ModeToggle } from "@/components/mode-toggle"
 export function Navbar() {
   return (
     <nav className="sticky top-0 z-40 w-full border-b bg-background p-4">
