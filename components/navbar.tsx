@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link"
-import { ModeToggle } from "@/components/mode-toggle"
 export function Navbar() {
   return (
     <nav className="sticky top-0 z-40 w-full border-b bg-background p-4">
@@ -30,9 +29,6 @@ export function Navbar() {
         <Link href ="https://drive.google.com/file/d/1unRqggYMSWB2uhlvFay_2PE958bMi2Jg/view?usp=sharing">
         [view resume]
         </Link>
-        </li>
-        <li className="ml-auto">
-          <ModeToggle />
         </li>
       </ul>
     </nav>
