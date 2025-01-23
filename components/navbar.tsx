@@ -7,8 +7,8 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-8">
-          <Link href="/" className="font-bold text-lg">
+        <div className="flex items-center">
+          <Link href="/" className="font-bold text-lg mr-8">
             hackice20
           </Link>
           <div className="hidden md:flex space-x-4">
