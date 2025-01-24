@@ -14,7 +14,7 @@ export function ModeToggle() {
   const { setTheme } = useTheme()
 
   return (
-    <div style={{ position: 'fixed', top: '1rem', right: '1rem', zIndex: 1000 }}>
+    <div className="fixed top-4 right-4 z-[1000]">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="outline" size="icon">
