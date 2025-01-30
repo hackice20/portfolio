@@ -41,7 +41,7 @@ const Projects = () => {
 
             {/* Bolty Project Card */}
             <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold">Bolty</h3>
+              <h3 className="text-2xl font-semibold">Boltly</h3>
               <div className="flex flex-wrap gap-2 mt-3">
                 <span className="px-2 py-1 bg-indigo-500 text-white text-sm rounded hover:bg-indigo-600 transition-colors duration-200">
                   WebContainer API
