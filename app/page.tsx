@@ -104,16 +104,16 @@ export default function Home() {
 
         <footer className="pt-8 text-sm text-muted-foreground">
           <div className="flex gap-4">
-            <a href="https://github.com/hackice20" className="hover:underline"target="_blank" rel="noopener noreferrer">[github]</a>
-            <span>|</span>
-             <a href="https://www.linkedin.com/in/yash-kamble2/" className="hover:underline"target="_blank" rel="noopener noreferrer">[linkedin]</a>
-            <span>|</span>
-            <a href="https://twitter.com/hackice20" className="hover:underline"target="_blank" rel="noopener noreferrer">[x]</a>
-            <span>|</span>
-            <a href="mailto:contact@yashworks.xyz" className="hover:underline"target="_blank" rel="noopener noreferrer">[email]</a>
-            <span>|</span>
-            <a href="https://drive.google.com/file/d/1-pTtVC80-VRZ-gfXUMbmCqDx4fdulsqq/view?usp=sharing className="hover:underline" target="_blank" rel="noopener noreferrer">[resume]</a>
-          </div>
+  <a href="https://github.com/hackice20" className="hover:underline" target="_blank" rel="noopener noreferrer">[github]</a>
+  <span>|</span>
+  <a href="https://www.linkedin.com/in/yash-kamble2/" className="hover:underline" target="_blank" rel="noopener noreferrer">[linkedin]</a>
+  <span>|</span>
+  <a href="https://twitter.com/hackice20" className="hover:underline" target="_blank" rel="noopener noreferrer">[x]</a>
+  <span>|</span>
+  <a href="mailto:contact@yashworks.xyz" className="hover:underline" target="_blank" rel="noopener noreferrer">[email]</a>
+  <span>|</span>
+  <a href="https://drive.google.com/file/d/1-pTtVC80-VRZ-gfXUMbmCqDx4fdulsqq/view?usp=sharing" className="hover:underline" target="_blank" rel="noopener noreferrer">[resume]</a>
+</div>
         </footer>
       </div>
     </main>
