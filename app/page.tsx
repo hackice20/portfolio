@@ -110,7 +110,7 @@ export default function Home() {
             <span>|</span>
             <a href="https://twitter.com/hackice20" className="hover:underline">[x]</a>
             <span>|</span>
-            <a href="mailto:hackice2004@gmail.com" className="hover:underline">[email]</a>
+            <a href="mailto:contact@yashworks.xyz" className="hover:underline">[email]</a>
             <span>|</span>
             <a href="https://drive.google.com/file/d/1-pTtVC80-VRZ-gfXUMbmCqDx4fdulsqq/view?usp=sharing"target="_blank" rel="noopener noreferrer">[resume]</a>
           </div>
