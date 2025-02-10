@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
-import { ModeToggle } from '@/components/mode-toggle'
 import { Navbar } from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/react'
 
@@ -38,9 +37,6 @@ export default function RootLayout({
           <div className="relative min-h-screen">
             <Navbar />
             <main>
-              <div className="absolute right-4 top-4 z-50">
-                <ModeToggle />
-              </div>
               {children}
             </main>
           </div>
