@@ -1,6 +1,6 @@
-// Navbar.tsx
 "use client"
 import Link from "next/link"
+import { ModeToggle } from "./mode-toggle" // Adjust the import path as needed
 
 export function Navbar() {
   return (
@@ -20,7 +20,9 @@ export function Navbar() {
         <li>
           <Link href="/blogs">[Blogs]</Link>
         </li>
-      
+        <li className="ml-auto"> {/* Added this line */}
+          <ModeToggle />
+        </li>
       </ul>
     </nav>
   )
