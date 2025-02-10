@@ -1,7 +1,5 @@
 "use client"
 import Link from "next/link"
-import { ModeToggle } from "./mode-toggle" // Adjust the import path as needed
-
 export function Navbar() {
   return (
     <nav className="sticky top-0 z-40 w-full border-b bg-background p-4 pr-14 md:pr-4">
@@ -19,9 +17,6 @@ export function Navbar() {
         </li>
         <li>
           <Link href="/blogs">[Blogs]</Link>
-        </li>
-        <li className="ml-auto"> {/* Added this line */}
-          <ModeToggle />
         </li>
       </ul>
     </nav>
