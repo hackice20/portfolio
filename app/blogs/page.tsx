@@ -3,15 +3,18 @@ export default function Blogs() {
     <main className="min-h-screen p-8 md:p-24 font-mono">
       <div className="max-w-3xl mx-auto space-y-8">
         <section className="space-y-2">
-          <div className="p-6 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
-            <h3 className="text-3xl font-bold mb-4 leading-tight">
+          <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+            <h3 className="text-2xl font-semibold mb-4">
               The Journey of a Sentence Through a Transformer
             </h3>
+            <p className="text-base mb-4">
+              Explore how a simple sentence navigates through the layers of a Transformer model, unraveling the complexities of attention mechanisms and deep learning processes. This article provides an insightful walkthrough of the Transformer's architecture and its application in natural language processing tasks.
+            </p>
             <a
               href="https://medium.com/@yashkam431/the-journey-of-a-sentence-through-a-transformer-434902aafb03"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-lg font-medium"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90 transition-colors duration-200 text-base font-medium"
             >
               Read More
             </a>
