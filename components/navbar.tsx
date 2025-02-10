@@ -17,6 +17,9 @@ export function Navbar() {
         <li>
           <Link href="/experience">[Experience]</Link>
         </li>
+        <li>
+          <Link href="/blogs">[Blog]</Link>
+        </li>
       
       </ul>
     </nav>
