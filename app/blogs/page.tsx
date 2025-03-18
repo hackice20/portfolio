@@ -4,6 +4,11 @@ export default function Blogs() {
       <div className="max-w-3xl mx-auto space-y-8">
         <section className="space-y-2">
           <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+            <img
+              src="https://raw.githubusercontent.com/hackice20/portfolio/main/transformer.png"
+              alt="Transformer Model"
+              className="w-full h-auto rounded-lg mb-4"
+            />
             <h3 className="text-2xl font-semibold mb-4">
               The Journey of a Sentence Through a Transformer
             </h3>
