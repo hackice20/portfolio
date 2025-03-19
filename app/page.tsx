@@ -114,7 +114,6 @@ export default function Home() {
   <span>|</span>
   <a href="https://drive.google.com/file/d/1-pTtVC80-VRZ-gfXUMbmCqDx4fdulsqq/view?usp=sharing" className="hover:underline" target="_blank" rel="noopener noreferrer">[resume]</a>
 </div>
-</div>
         </footer>
       </div>
     </main>
