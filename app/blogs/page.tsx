@@ -5,7 +5,7 @@ export default function Blogs() {
         <section className="space-y-2">
           <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
             <img
-              src="https://raw.githubusercontent.com/hackice20/portfolio/main/cropped-transformer.png"
+              src="https://raw.githubusercontent.com/hackice20/portfolio/main/transformer.png"
               alt="Transformer Model"
               className="w-full h-auto rounded-lg mb-4"
             />
