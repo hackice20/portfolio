@@ -112,7 +112,7 @@ export default function Home() {
   <span>|</span>
   <a href="mailto:contact@yashworks.xyz" className="hover:underline" target="_blank" rel="noopener noreferrer">[email]</a>
   <span>|</span>
-  <a href="https://drive.google.com/file/d/1-pTtVC80-VRZ-gfXUMbmCqDx4fdulsqq/view?usp=sharing" className="hover:underline" target="_blank" rel="noopener noreferrer">[resume]</a>
+  <a href="https://drive.google.com/file/d/1hl3eJNS9gtDi7DSCaLhLyvf3yuwLoWXw/view?usp=sharing" className="hover:underline" target="_blank" rel="noopener noreferrer">[resume]</a>
 </div>
         </footer>
       </div>
