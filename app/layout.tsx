@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
 import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -30,15 +31,15 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <div className="relative min-h-screen">
             <Navbar />
-            <main>
+            <main className="pt-16 md:pt-20 pb-16 md:pb-20">
               {children}
             </main>
+            <Footer />
           </div>
         </ThemeProvider>
         <Analytics />

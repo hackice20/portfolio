@@ -14,46 +14,51 @@ export function Navbar() {
   const { setTheme } = useTheme()
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b bg-background p-4 pr-4">
-      <ul className="flex items-center gap-4 md:gap-8 text-lg">
-        <li>
-          <Link href="/" className="font-bold">
-            hackice20
-          </Link>
-        </li>
-        <li>
-          <Link href="/projects">[Projects]</Link>
-        </li>
-        <li>
-          <Link href="/experience">[Experience]</Link>
-        </li>
-        <li>
-          <Link href="/blogs">[Blogs]</Link>
-        </li>
-        {/* Theme Toggle */}
-        <li className="ml-auto">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                <span className="sr-only">Toggle theme</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => setTheme("light")}>
-                Light
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("dark")}>
-                Dark
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("system")}>
-                System
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </li>
-      </ul>
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-fit px-4">
+      <div className="frosted-glass dark:frosted-glass-dark levitate rounded-2xl px-4 md:px-6 py-3 md:py-4 shadow-xl">
+        <ul className="flex items-center gap-3 md:gap-6 text-sm md:text-base font-mono">
+          <li>
+            <Link href="/" className="font-bold hover:text-primary hover:underline transition-all duration-200">
+              hackice20
+            </Link>
+          </li>
+          <li>
+            <Link href="/projects" className="hover:text-primary hover:underline transition-all duration-200">
+              [Projects]
+            </Link>
+          </li>
+          <li>
+            <Link href="/experience" className="hover:text-primary hover:underline transition-all duration-200">
+              [Experience]
+            </Link>
+          </li>
+          <li>
+            <Link href="/blogs" className="hover:text-primary hover:underline transition-all duration-200">
+              [Blogs]
+            </Link>
+          </li>
+          {/* Theme Toggle */}
+          <li>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="h-8 w-8 p-0 hover:bg-primary/10">
+                  <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="frosted-glass dark:frosted-glass-dark border-none">
+                <DropdownMenuItem onClick={() => setTheme("light")} className="text-black dark:text-white hover:bg-primary/10 cursor-pointer">
+                  Light
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")} className="text-black dark:text-white hover:bg-primary/10 cursor-pointer">
+                  Dark
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </li>
+        </ul>
+      </div>
     </nav>
   )
 }

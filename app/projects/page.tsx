@@ -6,11 +6,11 @@ const Projects = () => {
   const [showMajorProjects, setShowMajorProjects] = useState(true);
 
   return (
-    <div className="min-h-screen p-8 md:p-24 font-mono">
-      <div className="max-w-3xl mx-auto space-y-8">
+    <div className="min-h-screen p-4 md:p-8 lg:p-24 font-mono">
+      <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
         {/* Page Header */}
         <section className="space-y-2">
-          <h1 className="text-4xl font-bold">projects</h1>
+          <h1 className="text-3xl md:text-4xl font-bold">projects</h1>
           <p className="text-muted-foreground">
             Here are some of the projects I've been working on:
           </p>
@@ -18,26 +18,120 @@ const Projects = () => {
 
         {/* Toggle Section */}
         <section className="space-y-4">
-          <div className="flex space-x-4 mt-4">
+          <div className="flex space-x-2 md:space-x-4 mt-4">
             <button
               onClick={() => setShowMajorProjects(true)}
-              className={`px-4 py-2 rounded ${showMajorProjects ? 'bg-primary text-primary-foreground' : 'bg-transparent text-primary'}`}
+              className={`px-3 md:px-4 py-2 rounded text-sm md:text-base ${showMajorProjects ? 'bg-primary text-primary-foreground' : 'bg-transparent text-primary'}`}
             >
               Major Projects
             </button>
             <button
               onClick={() => setShowMajorProjects(false)}
-              className={`px-4 py-2 rounded ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-black-800'}`}
+              className={`px-3 md:px-4 py-2 rounded text-sm md:text-base ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-black-800'}`}
             >
               Minor Projects
             </button>
           </div>
         </section>
 
+        {/* Custom CSS for blinking animation */}
+        <style jsx>{`
+          @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+          }
+          .blinking-dot {
+            animation: blink 1.5s infinite;
+          }
+        `}</style>
+
         {/* Major Projects Section */}
         {showMajorProjects && (
           <section className="space-y-4">
             <h2 className="text-3xl font-semibold">Major Projects</h2>
+
+            {/* QueryNox Project Card */}
+            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-2xl font-semibold">QueryNox</h3>
+                <div className="flex items-center gap-2 px-3 py-1 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-background">
+                  <div className="w-2 h-2 bg-green-500 rounded-full blinking-dot"></div>
+                  <span className="text-sm font-medium text-foreground">Ongoing</span>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600 transition-colors duration-200">
+                  JavaScript
+                </span>
+                <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+                  Node.js
+                </span>
+                <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
+                  MongoDB
+                </span>
+                <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
+                  Multi-AI
+                </span>
+                <span className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors duration-200">
+                  RAG
+                </span>
+              </div>
+              <ul className="mt-2 text-muted-foreground list-disc pl-5">
+                <li>Multi-model AI chat platform integrating OpenAI, Claude, Llama, and Gemini .</li>
+                <li>Features advanced web search augmentation and document-based context (RAG) for enhanced responses.</li>
+                <li>Implements persistent chat history, user session management, and system prompt customization.</li>
+                <li>Supports PDF document analysis, multi-file upload processing, and image generation.</li>
+                <li>Built with robust error handling, file size limits, and optimized context generation for performance.</li>
+              </ul>
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://github.com/hackice20/querynox"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            {/* PG-RAG Project Card */}
+            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold">PG-RAG (Paul Graham Essays RAG System)</h3>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
+                  Python
+                </span>
+                <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
+                  OpenAI API
+                </span>
+                <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+                  RAG
+                </span>
+                <span className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors duration-200">
+                  Web Scraping
+                </span>
+                <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600 transition-colors duration-200">
+                  Embeddings
+                </span>
+              </div>
+              <ul className="mt-2 text-muted-foreground list-disc pl-5">
+                <li>Intelligent RAG system for querying Paul Graham's essays using natural language processing.</li>
+                <li>Combines web scraping, text embedding generation, and OpenAI's language models for contextual responses.</li>
+                <li>Features semantic search with conversation history maintenance for enhanced context awareness.</li>
+                <li>Implements robust error handling, retry logic for API calls, and efficient essay chunking mechanisms.</li>
+              </ul>
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://github.com/hackice20/pg-rag"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
 
             {/* Bolty Project Card */}
             <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
@@ -240,6 +334,117 @@ const Projects = () => {
            {!showMajorProjects && (
           <section className="space-y-4">
             <h2 className="text-3xl font-semibold">Minor Projects</h2>
+
+            {/* Go YouTube Clipper Project Card */}
+            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold">Go YouTube Clipper</h3>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="px-2 py-1 bg-cyan-500 text-white text-sm rounded hover:bg-cyan-600 transition-colors duration-200">
+                  Go
+                </span>
+                <span className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors duration-200">
+                  yt-dlp
+                </span>
+                <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+                  FFmpeg
+                </span>
+                <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
+                  CLI
+                </span>
+              </div>
+              <ul className="mt-2 text-muted-foreground list-disc pl-5">
+                <li>Video and audio download/trim tool that leverages yt-dlp for downloading and FFmpeg for manipulation.</li>
+                <li>Supports downloading full videos, audio-only, and precise trimming with start/end time specifications.</li>
+                <li>Features organized file management with timestamped outputs in a dedicated downloads folder.</li>
+                <li>Implements automatic cleanup of temporary files after processing operations.</li>
+                <li>Cross-platform compatibility with support for various video platforms and formats.</li>
+              </ul>
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://github.com/hackice20/go-yt-clipper"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            {/* Go Blog Backend Project Card */}
+            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-2xl font-semibold">Go Blog Backend</h3>
+                <div className="flex items-center gap-2 px-3 py-1 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-background">
+                  <div className="w-2 h-2 bg-green-500 rounded-full blinking-dot"></div>
+                  <span className="text-sm font-medium text-foreground">Ongoing</span>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="px-2 py-1 bg-cyan-500 text-white text-sm rounded hover:bg-cyan-600 transition-colors duration-200">
+                  Go
+                </span>
+                <span className="px-2 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition-colors duration-200">
+                  Backend
+                </span>
+                <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+                  REST API
+                </span>
+              </div>
+              <ul className="mt-2 text-muted-foreground list-disc pl-5">
+                <li>RESTful blog backend service built with Go for high performance and scalability.</li>
+                <li>Implements modern backend architecture patterns with clean code organization.</li>
+                <li>Features comprehensive API endpoints for blog post management and user operations.</li>
+                <li>Currently under active development with ongoing feature additions and optimizations.</li>
+                <li>Designed for easy deployment and maintenance in production environments.</li>
+              </ul>
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://github.com/hackice20/go-blog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            {/* GoLang TCP File Transfer Project Card */}
+            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold">GoLang TCP File Transfer</h3>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="px-2 py-1 bg-cyan-500 text-white text-sm rounded hover:bg-cyan-600 transition-colors duration-200">
+                  Go
+                </span>
+                <span className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors duration-200">
+                  TCP
+                </span>
+                <span className="px-2 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600 transition-colors duration-200">
+                  Networking
+                </span>
+                <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+                  File Transfer
+                </span>
+              </div>
+              <ul className="mt-2 text-muted-foreground list-disc pl-5">
+                <li>Client-server application implementing efficient file transfer over TCP protocol using Go.</li>
+                <li>Features both HTTP and TCP protocol support with configurable server and client modes.</li>
+                <li>Implements optimized streaming for large files without loading entire files into memory.</li>
+                <li>Supports parallel TCP connections for enhanced transfer speeds and reliability.</li>
+                <li>Includes command-line interface with flexible configuration options for various use cases.</li>
+              </ul>
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://github.com/hackice20/golang-tcp-file-transfer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
 
             {/* Invoice Generator Project Card */}
             <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
