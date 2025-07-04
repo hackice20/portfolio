@@ -335,42 +335,6 @@ const Projects = () => {
           <section className="space-y-4">
             <h2 className="text-3xl font-semibold">Minor Projects</h2>
 
-            {/* Go YouTube Clipper Project Card */}
-            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
-              <h3 className="text-2xl font-semibold">Go YouTube Clipper</h3>
-              <div className="flex flex-wrap gap-2 mt-3">
-                <span className="px-2 py-1 bg-cyan-500 text-white text-sm rounded hover:bg-cyan-600 transition-colors duration-200">
-                  Go
-                </span>
-                <span className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors duration-200">
-                  yt-dlp
-                </span>
-                <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
-                  FFmpeg
-                </span>
-                <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
-                  CLI
-                </span>
-              </div>
-              <ul className="mt-2 text-muted-foreground list-disc pl-5">
-                <li>Video and audio download/trim tool that leverages yt-dlp for downloading and FFmpeg for manipulation.</li>
-                <li>Supports downloading full videos, audio-only, and precise trimming with start/end time specifications.</li>
-                <li>Features organized file management with timestamped outputs in a dedicated downloads folder.</li>
-                <li>Implements automatic cleanup of temporary files after processing operations.</li>
-                <li>Cross-platform compatibility with support for various video platforms and formats.</li>
-              </ul>
-              <div className="flex space-x-4 mt-4">
-                <a
-                  href="https://github.com/hackice20/go-yt-clipper"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
-                >
-                  GitHub
-                </a>
-              </div>
-            </div>
-
             {/* Go Blog Backend Project Card */}
             <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
               <div className="flex justify-between items-start mb-3">
@@ -401,6 +365,42 @@ const Projects = () => {
               <div className="flex space-x-4 mt-4">
                 <a
                   href="https://github.com/hackice20/go-blog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+
+            {/* Go YouTube Clipper Project Card */}
+            <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold">Go YouTube Clipper</h3>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <span className="px-2 py-1 bg-cyan-500 text-white text-sm rounded hover:bg-cyan-600 transition-colors duration-200">
+                  Go
+                </span>
+                <span className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition-colors duration-200">
+                  yt-dlp
+                </span>
+                <span className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600 transition-colors duration-200">
+                  FFmpeg
+                </span>
+                <span className="px-2 py-1 bg-purple-500 text-white text-sm rounded hover:bg-purple-600 transition-colors duration-200">
+                  CLI
+                </span>
+              </div>
+              <ul className="mt-2 text-muted-foreground list-disc pl-5">
+                <li>Video and audio download/trim tool that leverages yt-dlp for downloading and FFmpeg for manipulation.</li>
+                <li>Supports downloading full videos, audio-only, and precise trimming with start/end time specifications.</li>
+                <li>Features organized file management with timestamped outputs in a dedicated downloads folder.</li>
+                <li>Implements automatic cleanup of temporary files after processing operations.</li>
+                <li>Cross-platform compatibility with support for various video platforms and formats.</li>
+              </ul>
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href="https://github.com/hackice20/go-yt-clipper"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
