@@ -33,10 +33,11 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="light"
           disableTransitionOnChange
+          themes={["light", "dark", "pookie"]}
         >
-          <div className="relative min-h-screen">
+          <div className="relative h-screen">
             <Navbar />
-            <main className="pt-16 md:pt-20 pb-16 md:pb-20">
+            <main className="h-full">
               {children}
             </main>
             <Footer />

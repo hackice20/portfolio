@@ -1,10 +1,9 @@
 export default function Blogs() {
   return (
-    <main className="min-h-screen p-4 md:p-8 lg:p-24 font-mono">
-      <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
-        <section className="space-y-2">
+    <main className="h-screen flex items-center justify-center p-4 md:p-8 font-mono">
+      <div className="max-w-3xl mx-auto w-full">
+        <section className="space-y-4">
           <div className="p-4 md:p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
-            
             <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">
               The Journey of a Sentence Through a Transformer
             </h3>
