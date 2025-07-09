@@ -1,6 +1,6 @@
 export default function Experience() {
   return (
-    <main className="h-screen flex items-center justify-center p-4 md:p-8 font-mono">
+    <main className="h-screen flex items-start justify-center pt-[114px] md:pt-[98px] p-4 md:p-8 font-mono">
       <div className="max-w-3xl mx-auto w-full">
         <section className="space-y-4">
           <h1 className="text-3xl md:text-4xl font-bold">experience</h1>

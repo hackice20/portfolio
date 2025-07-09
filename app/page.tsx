@@ -10,7 +10,7 @@ export default function Home() {
   const isPookieMode = theme === "pookie"
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-3 md:p-8 font-mono overflow-hidden" id="top">
+    <main className="min-h-screen flex items-center justify-center p-3 md:p-8 font-mono" id="top">
       <div className="max-w-6xl mx-auto w-full">
         {/* Hero Section */}
         <section className="text-center mb-4 md:mb-8">

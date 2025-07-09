@@ -81,6 +81,29 @@
   }
 }
 
+/* Mobile viewport height handling */
+@layer base {
+  html {
+    /* Support for dynamic viewport height on mobile */
+    height: -webkit-fill-available;
+  }
+  
+  body {
+    /* Ensure smooth scrolling on all devices */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Mobile-specific adjustments */
+  @media screen and (max-width: 768px) {
+    html {
+      /* Use dynamic viewport units for better mobile experience */
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+    }
+  }
+}
+
 /* Apple Liquid Glass Effects */
 @layer utilities {
   .glass-effect {

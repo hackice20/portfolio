@@ -35,9 +35,9 @@ export default function RootLayout({
           disableTransitionOnChange
           themes={["light", "dark", "pookie"]}
         >
-          <div className="relative h-screen">
+          <div className="relative min-h-screen flex flex-col">
             <Navbar />
-            <main className="h-full">
+            <main className="flex-1">
               {children}
             </main>
             <Footer />

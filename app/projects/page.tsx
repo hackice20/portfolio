@@ -6,7 +6,7 @@ const Projects = () => {
   const [showMajorProjects, setShowMajorProjects] = useState(true);
 
   return (
-    <div className="min-h-screen p-4 md:p-8 lg:p-24 font-mono">
+    <div className="min-h-screen pt-[114px] md:pt-[98px] pb-16 p-4 md:p-8 lg:px-24 font-mono">
       <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
         {/* Page Header */}
         <section className="space-y-2">
