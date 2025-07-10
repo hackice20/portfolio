@@ -42,7 +42,7 @@ export function Footer() {
           </a>
           <span className="text-muted-foreground">|</span>
           <a 
-            href="https://drive.google.com/file/d/1hl3eJNS9gtDi7DSCaLhLyvf3yuwLoWXw/view?usp=sharing" 
+            href="https://drive.google.com/file/d/1MMxYUuAqhvNW2eul5AqIqT5gKRGqKxbD/view?usp=sharing" 
             className="hover:text-primary hover:underline transition-all duration-200" 
             target="_blank" 
             rel="noopener noreferrer"
