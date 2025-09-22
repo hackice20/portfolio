@@ -114,7 +114,7 @@ export const PROJECTS: Project[] = [
     id: 'justice-gpt',
     title: 'Justice-GPT',
     section: 'major',
-    media: { kind: 'image', src: '/justice-gpt.jpg', alt: 'Justice-GPT' },
+    media: { kind: 'image', src: '/justice-gpt-image.png', alt: 'Justice-GPT' },
     tags: ['Gemini AI API', 'React'],
     points: [
       'Developed Gemini AI Crime Case Generator, a web-based tool to analyze crime cases based on the Indian Constitution.',
@@ -130,6 +130,7 @@ export const PROJECTS: Project[] = [
     id: 'unbounded',
     title: 'UnBoundEd',
     section: 'major',
+    media: { kind: 'image', src: '/unbounded-image.png', alt: 'UnboundEd' },
     tags: ['Next.js', 'AI', 'Cloudinary', 'jsPDF', 'React Lazy Loading'],
     points: [
       'Delivers downloadable lessons (text/video) with background sync for progress and scores.',
@@ -148,6 +149,7 @@ export const PROJECTS: Project[] = [
     id: 'micro-gpt',
     title: 'Micro-GPT',
     section: 'major',
+    media: { kind: 'image', src: '/micro-gpt-image.png', alt: 'micro-GPT' },
     tags: ['Python', 'Jupyter Notebook', 'Embeddings', 'Attention'],
     points: [
       'Implemented "Attention Is All You Need" architecture in Python for local GPT-style query handling.',
