@@ -6,9 +6,9 @@ import { MAJOR_PROJECTS, MINOR_PROJECTS, type Project } from './projects.data';
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
+    <div className="p-3 sm:p-4 md:p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md">
       <div className="flex justify-between items-start mb-3">
-        <h3 className="text-2xl font-semibold">{project.title}</h3>
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">{project.title}</h3>
         {project.statusChip && (
           <div className="flex items-center gap-2 px-3 py-1 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-background">
             <div className="w-2 h-2 bg-green-500 rounded-full blinking-dot"></div>
@@ -42,6 +42,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
             controls={false}
             disablePictureInPicture
             controlsList="nodownload noplaybackrate nofullscreen noremoteplayback"
+            webkit-playsinline="true"
+            x5-video-player-type="h5"
+            x5-video-player-fullscreen="false"
+            x5-video-orientation="portraint"
           >
             {project.media.sources?.map((s, i) => (
               <source key={i} src={s.src} type={s.type} />
@@ -98,25 +102,27 @@ export default function Projects() {
   const [showMajorProjects, setShowMajorProjects] = useState(true);
 
   return (
-    <div className="min-h-screen pt-[114px] md:pt-[98px] pb-16 p-4 md:p-8 lg:px-24 font-mono">
-      <div className="max-w-3xl mx-auto space-y-6 md:space-y-8">
+    <div className="min-h-screen pt-[80px] sm:pt-[98px] md:pt-[98px] pb-16 p-2 sm:p-4 md:p-8 lg:px-24 font-mono">
+      <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6 md:space-y-8">
         <section className="space-y-2">
           <h1 className="text-3xl md:text-4xl font-bold">projects</h1>
           <p className="text-muted-foreground">Here are some of the projects I've been working on:</p>
         </section>
 
-        <div className="flex space-x-2 md:space-x-4 mt-4">
+        <div className="flex space-x-1 sm:space-x-2 md:space-x-4 mt-4">
           <button 
             onClick={() => setShowMajorProjects(true)} 
-            className={`px-3 md:px-4 py-2 rounded text-sm md:text-base ${showMajorProjects ? 'bg-primary text-primary-foreground' : 'bg-transparent text-primary'}`}
+            className={`px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded text-xs sm:text-sm md:text-base ${showMajorProjects ? 'bg-primary text-primary-foreground' : 'bg-transparent text-primary'}`}
           >
-            Major Projects
+            <span className="sm:hidden">Major</span>
+            <span className="hidden sm:inline">Major Projects</span>
           </button>
           <button 
             onClick={() => setShowMajorProjects(false)} 
-            className={`px-3 md:px-4 py-2 rounded text-sm md:text-base ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-black-800'}`}
+            className={`px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded text-xs sm:text-sm md:text-base ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-black-800'}`}
           >
-            Minor Projects
+            <span className="sm:hidden">Minor</span>
+            <span className="hidden sm:inline">Minor Projects</span>
           </button>
         </div>
 

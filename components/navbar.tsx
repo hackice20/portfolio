@@ -7,25 +7,25 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-4xl px-2 sm:px-4">
-      <div className="frosted-glass dark:frosted-glass-dark levitate rounded-2xl px-3 sm:px-4 md:px-6 py-3 sm:py-3 md:py-4 shadow-xl">
-        <ul className="flex items-center justify-between gap-3 sm:gap-3 md:gap-6 text-xs sm:text-sm md:text-base font-mono">
+    <nav className="fixed top-2 sm:top-4 left-1/2 transform -translate-x-1/2 z-50 w-[98%] sm:w-[95%] max-w-4xl px-1 sm:px-2 md:px-4" style={{ WebkitTransform: 'translateX(-50%)' }}>
+      <div className="frosted-glass dark:frosted-glass-dark levitate rounded-xl sm:rounded-2xl px-2 sm:px-3 md:px-6 py-2 sm:py-3 md:py-4 shadow-xl" style={{ WebkitBackfaceVisibility: 'hidden' }}>
+        <ul className="flex items-center justify-between gap-1 sm:gap-2 md:gap-6 text-xs sm:text-sm md:text-base font-mono">
           <li className="flex-shrink-0">
             <Link href="/" className="font-bold hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-1">
               hackice20
             </Link>
           </li>
-          <li className="flex items-center gap-3 sm:gap-2 md:gap-4">
-            <Link href="/projects" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-1">
-              <span className="sm:hidden">[projects]</span>
+          <li className="flex items-center gap-1 sm:gap-2 md:gap-4">
+            <Link href="/projects" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-0.5 sm:px-1">
+              <span className="text-xs sm:hidden">[proj]</span>
               <span className="hidden sm:inline">[Projects]</span>
             </Link>
-            <Link href="/experience" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-1">
-              <span className="sm:hidden">[exp]</span>
+            <Link href="/experience" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-0.5 sm:px-1">
+              <span className="text-xs sm:hidden">[exp]</span>
               <span className="hidden sm:inline">[Experience]</span>
             </Link>
-            <Link href="/blogs" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-1">
-              <span className="sm:hidden">[blogs]</span>
+            <Link href="/blogs" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-0.5 sm:px-1">
+              <span className="text-xs sm:hidden">[blog]</span>
               <span className="hidden sm:inline">[Blogs]</span>
             </Link>
           </li>

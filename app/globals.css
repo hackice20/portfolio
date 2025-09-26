@@ -79,6 +79,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  html {
+    /* Remove minimum width constraints */
+  }
 }
 
 /* Mobile viewport height handling */
@@ -86,12 +90,20 @@
   html {
     /* Support for dynamic viewport height on mobile */
     height: -webkit-fill-available;
+    /* Safari-specific fixes */
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
   }
   
   body {
     /* Ensure smooth scrolling on all devices */
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    /* Safari-specific fixes */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent zoom on input focus */
+    -webkit-text-size-adjust: 100%;
   }
   
   /* Mobile-specific adjustments */
@@ -101,23 +113,75 @@
       min-height: 100vh;
       min-height: -webkit-fill-available;
     }
+    
+    /* Safari-specific mobile fixes */
+    body {
+      /* Prevent horizontal scrolling */
+      overflow-x: hidden;
+      /* Fix for Safari mobile viewport issues */
+      position: relative;
+    }
+  }
+  
+  /* Responsive design for small screens */
+  @media screen and (max-width: 480px) {
+    /* Make navbar more compact on small screens */
+    .navbar-compact {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+    }
+    
+    /* Adjust spacing for small screens */
+    .container-padding {
+      padding: 0.75rem;
+    }
+  }
+  
+  /* Safari-specific fixes for flexbox */
+  .flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  /* Safari-specific fixes for grid */
+  .grid {
+    display: -webkit-grid;
+    display: grid;
+  }
+  
+  /* Safari-specific fixes for transforms */
+  .transform {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  
+  /* Safari-specific fixes for fixed positioning */
+  .fixed {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }
 
 /* Apple Liquid Glass Effects */
 @layer utilities {
   .glass-effect {
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(255, 255, 255, 0.1);
+    /* Fallback for browsers that don't support backdrop-filter */
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Safari-specific backdrop filter */
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
   }
   
   .glass-effect-dark {
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(0, 0, 0, 0.1);
+    /* Fallback for browsers that don't support backdrop-filter */
+    background: rgba(0, 0, 0, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Safari-specific backdrop filter */
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
   }
 
   .levitate {
@@ -136,17 +200,21 @@
   }
 
   .frosted-glass {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background: rgba(255, 255, 255, 0.1);
+    /* Fallback for browsers that don't support backdrop-filter */
+    background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Safari-specific backdrop filter */
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
   }
 
   .frosted-glass-dark {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background: rgba(0, 0, 0, 0.1);
+    /* Fallback for browsers that don't support backdrop-filter */
+    background: rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Safari-specific backdrop filter */
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    backdrop-filter: blur(16px) saturate(180%);
   }
 
   .animate-float {
@@ -160,5 +228,29 @@
     50% {
       transform: translateY(-5px);
     }
+  }
+  
+  /* Safari-specific button fixes */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Safari-specific input fixes */
+  input, textarea, select {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+  
+  /* Safari-specific scrollbar fixes */
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
   }
 }
