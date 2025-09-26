@@ -112,17 +112,15 @@ export default function Projects() {
         <div className="flex space-x-1 sm:space-x-2 md:space-x-4 mt-4">
           <button 
             onClick={() => setShowMajorProjects(true)} 
-            className={`px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded text-xs sm:text-sm md:text-base ${showMajorProjects ? 'bg-primary text-primary-foreground' : 'bg-transparent text-primary'}`}
+            className={`px-3 md:px-4 py-2 rounded text-sm md:text-base ${showMajorProjects ? 'bg-primary text-primary-foreground' : 'bg-transparent text-primary'}`}
           >
-            <span className="sm:hidden">Major</span>
-            <span className="hidden sm:inline">Major Projects</span>
+            Major Projects
           </button>
           <button 
             onClick={() => setShowMajorProjects(false)} 
-            className={`px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded text-xs sm:text-sm md:text-base ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-black-800'}`}
+            className={`px-3 md:px-4 py-2 rounded text-sm md:text-base ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-black-800'}`}
           >
-            <span className="sm:hidden">Minor</span>
-            <span className="hidden sm:inline">Minor Projects</span>
+            Minor Projects
           </button>
         </div>
 
