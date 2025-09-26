@@ -168,7 +168,7 @@
 @layer utilities {
   .glass-effect {
     /* Fallback for browsers that don't support backdrop-filter */
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     /* Safari-specific backdrop filter */
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -177,7 +177,7 @@
   
   .glass-effect-dark {
     /* Fallback for browsers that don't support backdrop-filter */
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
     /* Safari-specific backdrop filter */
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -201,7 +201,7 @@
 
   .frosted-glass {
     /* Fallback for browsers that don't support backdrop-filter */
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     /* Safari-specific backdrop filter */
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -210,7 +210,7 @@
 
   .frosted-glass-dark {
     /* Fallback for browsers that don't support backdrop-filter */
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
     /* Safari-specific backdrop filter */
     -webkit-backdrop-filter: blur(16px) saturate(180%);

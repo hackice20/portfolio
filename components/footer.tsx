@@ -2,7 +2,7 @@
 
 export function Footer() {
   return (
-    <footer className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40 w-[95%] max-w-4xl px-2 sm:px-4" style={{ WebkitTransform: 'translateX(-50%)' }}>
+    <footer className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40" style={{ WebkitTransform: 'translateX(-50%)' }}>
       <div className="frosted-glass dark:frosted-glass-dark levitate rounded-2xl px-3 sm:px-4 md:px-6 py-2 md:py-3 shadow-xl" style={{ WebkitBackfaceVisibility: 'hidden' }}>
         <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-4 text-xs md:text-sm font-mono flex-wrap">
           <a 
