@@ -29,7 +29,7 @@ export function Footer() {
             rel="noopener noreferrer"
           >
             <img 
-              src="/X logo.png" 
+              src="/X%20logo.png" 
               alt="X (Twitter)" 
               className="w-5 h-5 sm:w-6 sm:h-6 x-logo"
             />

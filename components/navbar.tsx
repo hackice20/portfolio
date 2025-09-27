@@ -9,18 +9,21 @@ export function Navbar() {
   return (
     <nav className="fixed top-2 sm:top-4 left-1/2 transform -translate-x-1/2 z-50" style={{ WebkitTransform: 'translateX(-50%)' }}>
       <div className="frosted-glass dark:frosted-glass-dark levitate rounded-xl sm:rounded-2xl px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 shadow-xl" style={{ WebkitBackfaceVisibility: 'hidden' }}>
-        <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-6 text-xs sm:text-sm md:text-base font-mono flex-wrap">
+        <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-6 text-xs sm:text-sm md:text-base font-mono">
           <Link href="/" className="font-bold hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-1">
             hackice20
           </Link>
-          <Link href="/projects" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-1">
-            [Projects]
+          <Link href="/projects" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-0.5">
+            <span className="sm:hidden">[projects]</span>
+            <span className="hidden sm:inline">[Projects]</span>
           </Link>
-          <Link href="/experience" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-1">
-            [Experience]
+          <Link href="/experience" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-0.5">
+            <span className="sm:hidden">[exp]</span>
+            <span className="hidden sm:inline">[Experience]</span>
           </Link>
-          <Link href="/blogs" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-1">
-            [Blogs]
+          <Link href="/blogs" className="hover:text-primary transition-all duration-200 [@media(hover:hover)]:hover:underline py-1 px-0.5">
+            <span className="sm:hidden">[blogs]</span>
+            <span className="hidden sm:inline">[Blogs]</span>
           </Link>
           {/* Theme Toggle */}
           <button

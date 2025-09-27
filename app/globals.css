@@ -269,4 +269,19 @@
   .dark .x-logo {
     filter: brightness(0) saturate(100%) invert(1);
   }
+  
+  /* Blogs logo compatibility for light and dark modes */
+  .blogs-logo {
+    transition: filter 0.2s ease;
+  }
+  
+  /* Light mode - keep blogs logo as-is */
+  .blogs-logo {
+    filter: none;
+  }
+  
+  /* Dark mode - make blogs logo light */
+  .dark .blogs-logo {
+    filter: invert(1);
+  }
 }
