@@ -1,53 +1,54 @@
 "use client"
+import { GithubIcon, LinkedinIcon, FileText, Mail } from "lucide-react"
 
 export function Footer() {
   return (
     <footer className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40" style={{ WebkitTransform: 'translateX(-50%)' }}>
       <div className="frosted-glass dark:frosted-glass-dark levitate rounded-2xl px-3 sm:px-4 md:px-6 py-2 md:py-3 shadow-xl" style={{ WebkitBackfaceVisibility: 'hidden' }}>
-        <div className="flex items-center justify-center gap-1 sm:gap-2 md:gap-4 text-xs md:text-sm font-mono flex-wrap">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6">
           <a 
             href="https://github.com/hackice20" 
-            className="hover:text-primary hover:underline transition-all duration-200" 
+            className="cursor-pointer hover:text-primary transition-all duration-200" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            [github]
+            <GithubIcon className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
-          <span className="text-muted-foreground">|</span>
           <a 
-            href="https://www.linkedin.com/in/yash-kamble2/" 
-            className="hover:text-primary hover:underline transition-all duration-200" 
+            href="https://www.linkedin.com/in/yash-kamble205/" 
+            className="cursor-pointer hover:text-primary transition-all duration-200" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            [linkedin]
+            <LinkedinIcon className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
-          <span className="text-muted-foreground">|</span>
           <a 
             href="https://twitter.com/hackice20" 
-            className="hover:text-primary hover:underline transition-all duration-200" 
+            className="cursor-pointer hover:opacity-70 transition-all duration-200" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            [x]
+            <img 
+              src="/X logo.png" 
+              alt="X (Twitter)" 
+              className="w-5 h-5 sm:w-6 sm:h-6 x-logo"
+            />
           </a>
-          <span className="text-muted-foreground">|</span>
           <a 
             href="mailto:contact@yashworks.xyz" 
-            className="hover:text-primary hover:underline transition-all duration-200" 
+            className="cursor-pointer hover:text-primary transition-all duration-200" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            [email]
+            <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
-          <span className="text-muted-foreground">|</span>
           <a 
             href="https://drive.google.com/file/d/1MMxYUuAqhvNW2eul5AqIqT5gKRGqKxbD/view?usp=sharing" 
-            className="hover:text-primary hover:underline transition-all duration-200" 
+            className="cursor-pointer hover:text-primary transition-all duration-200" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            [resume]
+            <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
         </div>
       </div>

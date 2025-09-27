@@ -253,4 +253,20 @@
     width: 0px;
     background: transparent;
   }
+  
+  /* X logo compatibility for light and dark modes */
+  .x-logo {
+    filter: brightness(0) saturate(100%);
+    transition: filter 0.2s ease;
+  }
+  
+  /* Light mode - make X logo dark */
+  .x-logo {
+    filter: brightness(0) saturate(100%);
+  }
+  
+  /* Dark mode - make X logo light */
+  .dark .x-logo {
+    filter: brightness(0) saturate(100%) invert(1);
+  }
 }
