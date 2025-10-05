@@ -5,7 +5,17 @@ export function Footer() {
   const links = [
     { href: "https://github.com/hackice20", icon: <GithubIcon />, label: "GitHub" },
     { href: "https://www.linkedin.com/in/yash-kamble205/", icon: <LinkedinIcon />, label: "LinkedIn" },
-    { href: "https://twitter.com/hackice20", icon: <img src="/X%20logo.png" alt="X (Twitter)" className="w-full h-full" />, label: "X" },
+    {
+  href: "https://twitter.com/hackice20",
+  icon: (
+    <img
+      src="/X%20logo.png"
+      alt="X (Twitter)"
+      className="w-full h-full transition-all duration-200 dark:invert"
+    />
+  ),
+  label: "X",
+},
     { href: "mailto:contact@yashworks.xyz", icon: <Mail />, label: "Email" },
     { href: "https://drive.google.com/file/d/1MMxYUuAqhvNW2eul5AqIqT5gKRGqKxbD/view?usp=sharing", icon: <FileText />, label: "Resume" },
   ]
