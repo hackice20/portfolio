@@ -18,7 +18,7 @@ export function Footer() {
     },
     { href: "mailto:contact@yashworks.xyz", icon: <Mail />, label: "Email" },
     {
-      href: "https://drive.google.com/file/d/1MMxYUuAqhvNW2eul5AqIqT5gKRGqKxbD/view?usp=sharing",
+      href: "/resume",
       icon: <FileText />,
       label: "Resume",
     },
