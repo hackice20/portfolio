@@ -4,7 +4,7 @@ import { useEffect } from "react"
 export default function ResumeRedirectPage() {
   useEffect(() => {
     window.location.replace(
-      "https://drive.google.com/file/d/1wHSvjIJsugpK7heRw8QDr4hRL4hczers/view?usp=sharing"
+      "https://drive.google.com/file/d/1qOf2Zo1hQzLajUHL2HSC2JB287KAaw97/view?usp=sharing"
     )
   }, [])
 
