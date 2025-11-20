@@ -1,8 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { MAJOR_PROJECTS, MINOR_PROJECTS, type Project } from './projects.data';
+import { OPEN_SOURCE_PRS } from './open-source.data';
+import PRCard, { type PRCardData } from './PRCard';
+import { fetchMultiplePRs, type GitHubPR } from './github-utils';
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
@@ -98,8 +101,97 @@ const ProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
+type TabType = 'major' | 'minor' | 'opensource';
+
 export default function Projects() {
-  const [showMajorProjects, setShowMajorProjects] = useState(true);
+  const [activeTab, setActiveTab] = useState<TabType>('major');
+  const [prData, setPrData] = useState<PRCardData[]>([]);
+  const [loadingPRs, setLoadingPRs] = useState(false);
+
+  useEffect(() => {
+    if (activeTab === 'opensource') {
+      setLoadingPRs(true);
+      const prRequests = OPEN_SOURCE_PRS.map(pr => ({
+        org: pr.org,
+        repo: pr.repo,
+        prNumber: pr.prNumber,
+      }));
+
+      fetchMultiplePRs(prRequests)
+        .then((githubPRs: GitHubPR[]) => {
+          // Merge GitHub data with our static data
+          const mergedPRs: PRCardData[] = OPEN_SOURCE_PRS.map(staticPR => {
+            const githubPR = githubPRs.find(
+              gpr => gpr.org === staticPR.org && 
+                     gpr.repo === staticPR.repo && 
+                     gpr.prNumber === staticPR.prNumber
+            );
+            
+            if (githubPR) {
+              return {
+                id: staticPR.id,
+                org: githubPR.org,
+                repo: githubPR.repo,
+                prNumber: githubPR.prNumber,
+                title: githubPR.title,
+                description: githubPR.description || staticPR.description,
+                url: githubPR.url,
+                mergedAt: githubPR.mergedAt,
+                labels: githubPR.labels.map(l => ({ name: l.name, color: l.color })),
+                author: githubPR.author,
+                authorAvatar: githubPR.authorAvatar,
+              };
+            }
+            
+            // Fallback to static data if GitHub fetch failed
+            return {
+              id: staticPR.id,
+              org: staticPR.org,
+              repo: staticPR.repo,
+              prNumber: staticPR.prNumber,
+              title: staticPR.title,
+              description: staticPR.description,
+              url: staticPR.url,
+              mergedAt: staticPR.mergedAt || null,
+              labels: staticPR.labels?.map(l => ({ name: l })) || [],
+            };
+          });
+          
+          setPrData(mergedPRs);
+        })
+        .catch((error) => {
+          console.error('Error fetching PR data:', error);
+          // Fallback to static data
+          setPrData(OPEN_SOURCE_PRS.map(pr => ({
+            id: pr.id,
+            org: pr.org,
+            repo: pr.repo,
+            prNumber: pr.prNumber,
+            title: pr.title,
+            description: pr.description,
+            url: pr.url,
+            mergedAt: pr.mergedAt || null,
+            labels: pr.labels?.map(l => ({ name: l })) || [],
+          })));
+        })
+        .finally(() => {
+          setLoadingPRs(false);
+        });
+    }
+  }, [activeTab]);
+
+  const getTabTitle = () => {
+    switch (activeTab) {
+      case 'major':
+        return 'Major Projects';
+      case 'minor':
+        return 'Minor Projects';
+      case 'opensource':
+        return 'Open Source Contributions';
+      default:
+        return 'Projects';
+    }
+  };
 
   return (
     <div className="min-h-screen pt-[80px] sm:pt-[98px] md:pt-[98px] pb-16 p-2 sm:p-4 md:p-8 lg:px-24 font-mono">
@@ -109,18 +201,36 @@ export default function Projects() {
           <p className="text-muted-foreground">Here are some of the projects I've been working on:</p>
         </section>
 
-        <div className="flex space-x-1 sm:space-x-2 md:space-x-4 mt-4">
+        <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mt-4">
           <button 
-            onClick={() => setShowMajorProjects(true)} 
-            className={`px-3 md:px-4 py-2 rounded text-sm md:text-base ${showMajorProjects ? 'bg-primary text-primary-foreground' : 'bg-transparent text-primary'}`}
+            onClick={() => setActiveTab('major')} 
+            className={`px-3 sm:px-4 md:px-5 py-2 rounded text-xs sm:text-sm md:text-base transition-colors whitespace-nowrap ${
+              activeTab === 'major' 
+                ? 'bg-primary text-primary-foreground' 
+                : 'bg-transparent text-primary hover:bg-muted'
+            }`}
           >
             Major Projects
           </button>
           <button 
-            onClick={() => setShowMajorProjects(false)} 
-            className={`px-3 md:px-4 py-2 rounded text-sm md:text-base ${!showMajorProjects ? 'bg-gray-800 text-white' : 'bg-transparent text-black-800'}`}
+            onClick={() => setActiveTab('minor')} 
+            className={`px-3 sm:px-4 md:px-5 py-2 rounded text-xs sm:text-sm md:text-base transition-colors whitespace-nowrap ${
+              activeTab === 'minor' 
+                ? 'bg-primary text-primary-foreground' 
+                : 'bg-transparent text-primary hover:bg-muted'
+            }`}
           >
             Minor Projects
+          </button>
+          <button 
+            onClick={() => setActiveTab('opensource')} 
+            className={`px-3 sm:px-4 md:px-5 py-2 rounded text-xs sm:text-sm md:text-base transition-colors whitespace-nowrap ${
+              activeTab === 'opensource' 
+                ? 'bg-primary text-primary-foreground' 
+                : 'bg-transparent text-primary hover:bg-muted'
+            }`}
+          >
+            Open Source
           </button>
         </div>
 
@@ -130,10 +240,31 @@ export default function Projects() {
         `}</style>
 
         <section className="space-y-4">
-          <h2 className="text-3xl font-semibold">{showMajorProjects ? 'Major Projects' : 'Minor Projects'}</h2>
-          {(showMajorProjects ? MAJOR_PROJECTS : MINOR_PROJECTS).map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+          <h2 className="text-3xl font-semibold">{getTabTitle()}</h2>
+          
+          {activeTab === 'opensource' ? (
+            <>
+              {loadingPRs ? (
+                <div className="text-center py-8 text-muted-foreground">
+                  Loading open source contributions...
+                </div>
+              ) : (
+                prData.length > 0 ? (
+                  prData.map((pr) => (
+                    <PRCard key={pr.id} pr={pr} />
+                  ))
+                ) : (
+                  <div className="text-center py-8 text-muted-foreground">
+                    No open source contributions found.
+                  </div>
+                )
+              )}
+            </>
+          ) : (
+            (activeTab === 'major' ? MAJOR_PROJECTS : MINOR_PROJECTS).map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))
+          )}
         </section>
       </div>
     </div>
