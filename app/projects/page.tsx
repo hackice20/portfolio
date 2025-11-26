@@ -14,7 +14,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">{project.title}</h3>
         {project.statusChip && (
           <div className="flex items-center gap-2 px-3 py-1 border-2 border-gray-300 dark:border-gray-600 rounded-lg bg-background">
-            <div className="w-2 h-2 bg-green-500 rounded-full blinking-dot"></div>
+            <div className="w-2 h-2 bg-green-500 rounded-full blinking-dot" aria-hidden="true"></div>
             <span className="text-sm font-medium text-foreground">{project.statusChip.label}</span>
           </div>
         )}
@@ -235,8 +235,19 @@ export default function Projects() {
         </div>
 
         <style jsx>{`
-          @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0.3; } }
-          .blinking-dot { animation: blink 1.5s infinite; }
+          @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.2; }
+          }
+          .blinking-dot {
+            animation: blink 1s infinite;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .blinking-dot {
+              animation: none;
+              opacity: 1;
+            }
+          }
         `}</style>
 
         <section className="space-y-4">
