@@ -284,4 +284,18 @@
   .dark .blogs-logo {
     filter: invert(1);
   }
+
+  /* Blinking dot animation for ongoing projects */
+  .blinking-dot {
+    animation: blink-green 1s ease-in-out infinite;
+  }
+
+  @keyframes blink-green {
+    0%, 100% {
+      background-color: #22c55e; /* light green (green-500) */
+    }
+    50% {
+      background-color: #0e5428; /* dark green (green-700) */
+    }
+  }
 }
