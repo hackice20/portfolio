@@ -15,6 +15,7 @@ export type PRCardData = {
   labels?: Array<{ name: string; color?: string }>;
   author?: string;
   authorAvatar?: string;
+  state?: string;
 };
 
 const PRCard = ({ pr }: { pr: PRCardData }) => {
