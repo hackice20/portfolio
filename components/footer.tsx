@@ -1,5 +1,5 @@
 "use client"
-import { GithubIcon, LinkedinIcon, FileText, Mail } from "lucide-react"
+import { GithubIcon, LinkedinIcon, Mail } from "lucide-react"
 
 export function Footer() {
   const links = [
@@ -17,11 +17,6 @@ export function Footer() {
       label: "X",
     },
     { href: "mailto:contact@yashworks.xyz", icon: <Mail />, label: "Email" },
-    {
-      href: "/resume",
-      icon: <FileText />,
-      label: "Resume",
-    },
   ]
 
   return (
