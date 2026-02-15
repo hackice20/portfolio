@@ -1,13 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { MAJOR_PROJECTS, MINOR_PROJECTS, type Project } from './projects.data';
-import { OPEN_SOURCE_PRS } from './open-source.data';
-import PRCard, { type PRCardData } from './PRCard';
-import { fetchMultiplePRs, type GitHubPR } from './github-utils';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown } from 'lucide-react';
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
@@ -103,216 +98,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
-type TabType = 'major' | 'minor' | 'opensource';
-
-type PRStatus = 'merged' | 'closed' | 'open';
-
-function StatusSection({ 
-  title, 
-  count, 
-  prs, 
-  sectionKey,
-  isOpen, 
-  onOpenChange 
-}: { 
-  title: string; 
-  count: number; 
-  prs: PRCardData[];
-  sectionKey: PRStatus;
-  isOpen: boolean;
-  onOpenChange: (open: boolean) => void;
-}) {
-  return (
-    <Collapsible open={isOpen} onOpenChange={onOpenChange} className="space-y-3">
-      <CollapsibleTrigger className="flex items-center justify-between w-full text-left hover:opacity-80 transition-opacity">
-        <h4 className="text-lg font-semibold text-muted-foreground flex-1">
-          {title} ({count})
-        </h4>
-        <ChevronDown className={`h-4 w-4 ml-2 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-      </CollapsibleTrigger>
-      <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down space-y-4 pt-2 pl-4 transition-all">
-        {prs.map((pr) => (
-          <PRCard key={pr.id} pr={pr} />
-        ))}
-      </CollapsibleContent>
-    </Collapsible>
-  );
-}
-
-function OpenSourceContributions({ prs }: { prs: PRCardData[] }) {
-  const [isOpen, setIsOpen] = useState(true);
-  const [openSection, setOpenSection] = useState<PRStatus | null>('merged'); // Start with merged open
-
-  // Group PRs by status
-  const groupedPRs: Record<PRStatus, PRCardData[]> = {
-    merged: [],
-    closed: [],
-    open: [],
-  };
-
-  prs.forEach(pr => {
-    if (pr.state === 'open') {
-      groupedPRs.open.push(pr);
-    } else if (pr.state === 'closed') {
-      if (pr.mergedAt) {
-        groupedPRs.merged.push(pr);
-      } else {
-        groupedPRs.closed.push(pr);
-      }
-    } else {
-      // Fallback: if mergedAt exists, treat as merged
-      if (pr.mergedAt) {
-        groupedPRs.merged.push(pr);
-      } else {
-        groupedPRs.closed.push(pr);
-      }
-    }
-  });
-
-  // Sort merged PRs by merged date (newest first)
-  groupedPRs.merged.sort((a, b) => {
-    if (!a.mergedAt) return 1;
-    if (!b.mergedAt) return -1;
-    return new Date(b.mergedAt).getTime() - new Date(a.mergedAt).getTime();
-  });
-
-  // Sort open and closed PRs by PR number (newest first, assuming higher numbers are newer)
-  groupedPRs.open.sort((a, b) => b.prNumber - a.prNumber);
-  groupedPRs.closed.sort((a, b) => b.prNumber - a.prNumber);
-
-  const handleSectionToggle = (sectionKey: PRStatus, open: boolean) => {
-    if (open) {
-      setOpenSection(sectionKey); // Open this section, close others
-    } else {
-      setOpenSection(null); // Close all sections
-    }
-  };
-
-  return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="space-y-4">
-      <CollapsibleTrigger className="flex items-center justify-between w-full p-4 text-card-foreground hover:bg-muted/50 transition-colors">
-        <h3 className="text-xl md:text-2xl font-semibold">cal.com</h3>
-        <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-      </CollapsibleTrigger>
-      <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down space-y-6 pl-6 pt-2 transition-all">
-        {groupedPRs.merged.length > 0 && (
-          <StatusSection 
-            title="Merged" 
-            count={groupedPRs.merged.length} 
-            prs={groupedPRs.merged}
-            sectionKey="merged"
-            isOpen={openSection === 'merged'}
-            onOpenChange={(open) => handleSectionToggle('merged', open)}
-          />
-        )}
-        {groupedPRs.open.length > 0 && (
-          <StatusSection 
-            title="Open" 
-            count={groupedPRs.open.length} 
-            prs={groupedPRs.open}
-            sectionKey="open"
-            isOpen={openSection === 'open'}
-            onOpenChange={(open) => handleSectionToggle('open', open)}
-          />
-        )}
-        {groupedPRs.closed.length > 0 && (
-          <StatusSection 
-            title="Closed" 
-            count={groupedPRs.closed.length} 
-            prs={groupedPRs.closed}
-            sectionKey="closed"
-            isOpen={openSection === 'closed'}
-            onOpenChange={(open) => handleSectionToggle('closed', open)}
-          />
-        )}
-      </CollapsibleContent>
-    </Collapsible>
-  );
-}
+type TabType = 'major' | 'minor';
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState<TabType>('major');
-  const [prData, setPrData] = useState<PRCardData[]>([]);
-  const [loadingPRs, setLoadingPRs] = useState(false);
-
-  useEffect(() => {
-    if (activeTab === 'opensource') {
-      setLoadingPRs(true);
-      const prRequests = OPEN_SOURCE_PRS.map(pr => ({
-        org: pr.org,
-        repo: pr.repo,
-        prNumber: pr.prNumber,
-      }));
-
-      fetchMultiplePRs(prRequests)
-        .then((githubPRs: GitHubPR[]) => {
-          // Filter only calcom PRs and merge GitHub data with our static data
-          const mergedPRs: PRCardData[] = OPEN_SOURCE_PRS
-            .filter(staticPR => staticPR.org === 'calcom') // Filter only calcom
-            .map(staticPR => {
-              const githubPR = githubPRs.find(
-                gpr => gpr.org === staticPR.org && 
-                       gpr.repo === staticPR.repo && 
-                       gpr.prNumber === staticPR.prNumber
-              );
-              
-              if (githubPR) {
-                return {
-                  id: staticPR.id,
-                  org: githubPR.org,
-                  repo: githubPR.repo,
-                  prNumber: githubPR.prNumber,
-                  title: githubPR.title,
-                  description: githubPR.description || staticPR.description,
-                  url: githubPR.url,
-                  mergedAt: githubPR.mergedAt,
-                  labels: githubPR.labels.map(l => ({ name: l.name, color: l.color })),
-                  author: githubPR.author,
-                  authorAvatar: githubPR.authorAvatar,
-                  state: githubPR.state,
-                };
-              }
-              
-              // Fallback to static data if GitHub fetch failed
-              return {
-                id: staticPR.id,
-                org: staticPR.org,
-                repo: staticPR.repo,
-                prNumber: staticPR.prNumber,
-                title: staticPR.title,
-                description: staticPR.description,
-                url: staticPR.url,
-                mergedAt: staticPR.mergedAt || null,
-                labels: staticPR.labels?.map(l => ({ name: l })) || [],
-                state: 'unknown',
-              };
-            });
-          
-          setPrData(mergedPRs);
-        })
-        .catch((error) => {
-          console.error('Error fetching PR data:', error);
-          // Fallback to static data, filter only calcom
-          setPrData(OPEN_SOURCE_PRS
-            .filter(pr => pr.org === 'calcom')
-            .map(pr => ({
-              id: pr.id,
-              org: pr.org,
-              repo: pr.repo,
-              prNumber: pr.prNumber,
-              title: pr.title,
-              description: pr.description,
-              url: pr.url,
-              mergedAt: pr.mergedAt || null,
-              labels: pr.labels?.map(l => ({ name: l })) || [],
-              state: 'unknown',
-            })));
-        })
-        .finally(() => {
-          setLoadingPRs(false);
-        });
-    }
-  }, [activeTab]);
 
   const getTabTitle = () => {
     switch (activeTab) {
@@ -320,8 +109,6 @@ export default function Projects() {
         return 'Major Projects';
       case 'minor':
         return 'Minor Projects';
-      case 'opensource':
-        return 'Open Source Contributions';
       default:
         return 'Projects';
     }
@@ -355,16 +142,6 @@ export default function Projects() {
             }`}
           >
             Minor Projects
-          </button>
-          <button 
-            onClick={() => setActiveTab('opensource')} 
-            className={`px-3 sm:px-4 md:px-5 py-2 rounded text-xs sm:text-sm md:text-base transition-colors whitespace-nowrap ${
-              activeTab === 'opensource' 
-                ? 'bg-primary text-primary-foreground' 
-                : 'bg-transparent text-primary hover:bg-muted'
-            }`}
-          >
-            Open Source
           </button>
         </div>
 
@@ -403,27 +180,9 @@ export default function Projects() {
         <section className="space-y-4">
           <h2 className="text-3xl font-semibold">{getTabTitle()}</h2>
           
-          {activeTab === 'opensource' ? (
-            <>
-              {loadingPRs ? (
-                <div className="text-center py-8 text-muted-foreground">
-                  Loading open source contributions...
-                </div>
-              ) : (
-                prData.length > 0 ? (
-                  <OpenSourceContributions prs={prData} />
-                ) : (
-                  <div className="text-center py-8 text-muted-foreground">
-                    No open source contributions found.
-                  </div>
-                )
-              )}
-            </>
-          ) : (
-            (activeTab === 'major' ? MAJOR_PROJECTS : MINOR_PROJECTS).map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))
-          )}
+          {(activeTab === 'major' ? MAJOR_PROJECTS : MINOR_PROJECTS).map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
         </section>
       </div>
     </div>
