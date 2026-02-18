@@ -16,7 +16,7 @@ export function Footer() {
       ),
       label: "X",
     },
-    { href: "mailto:contact@yashworks.xyz", icon: <Mail />, label: "Email" },
+    { href: "mailto:contact@yashworks.com", icon: <Mail />, label: "Email" },
   ]
 
   return (
