@@ -1,5 +1,5 @@
-import { type Experience as ExperienceItem } from '../../experience.data';
-import styles from '../../experience.module.css';
+import { type Experience as ExperienceItem } from '../experience.data';
+import styles from '../experience.module.css';
 
 export const ExperienceCard = ({ item }: { item: ExperienceItem }) => {
   return (

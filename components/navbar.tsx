@@ -10,7 +10,7 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <nav className={cn(styles.centeredFixed, styles.glassContainer, "top-4 z-50 rounded-full px-4 sm:px-6 py-2 sm:py-3 border-2 border-gray-300 dark:border-gray-700 max-w-[90vw] sm:max-w-fit")}
+    <nav className={cn(styles.centeredFixed, styles.glassContainer, "frosted-glass dark:frosted-glass-dark levitate top-4 z-50 rounded-full px-4 sm:px-6 py-2 sm:py-3 border-2 border-gray-300 dark:border-gray-700 max-w-[90vw] sm:max-w-fit")}
       style={{ WebkitBackfaceVisibility: "hidden" }}
     >
       <ul className={styles.navLinks}>

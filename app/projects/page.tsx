@@ -12,16 +12,7 @@ type TabType = 'major' | 'minor';
 export default function Projects() {
   const [activeTab, setActiveTab] = useState<TabType>('major');
 
-  const getTabTitle = () => {
-    switch (activeTab) {
-      case 'major':
-        return 'Major Projects';
-      case 'minor':
-        return 'Minor Projects';
-      default:
-        return 'Projects';
-    }
-  };
+  const tabTitle = activeTab === 'major' ? 'Major Projects' : 'Minor Projects';
 
   return (
     <div className={styles.page}>
@@ -32,32 +23,25 @@ export default function Projects() {
         </section>
 
         <div className={styles.tabs}>
-          <button 
-            onClick={() => setActiveTab('major')} 
-            className={`${styles.tabButton} ${
-              activeTab === 'major' 
-                ? 'bg-primary text-primary-foreground' 
-                : 'bg-transparent text-primary hover:bg-muted'
-            }`}
-          >
-            Major Projects
-          </button>
-          <button 
-            onClick={() => setActiveTab('minor')} 
-            className={`${styles.tabButton} ${
-              activeTab === 'minor' 
-                ? 'bg-primary text-primary-foreground' 
-                : 'bg-transparent text-primary hover:bg-muted'
-            }`}
-          >
-            Minor Projects
-          </button>
+          {(['major', 'minor'] as const).map(tab => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`${styles.tabButton} ${
+                activeTab === tab
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-transparent text-primary hover:bg-muted'
+              }`}
+            >
+              {tab === 'major' ? 'Major Projects' : 'Minor Projects'}
+            </button>
+          ))}
         </div>
 
         <style jsx>{PROJECTS_CSS}</style>
 
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>{getTabTitle()}</h2>
+          <h2 className={styles.sectionTitle}>{tabTitle}</h2>
           
           {(activeTab === 'major' ? MAJOR_PROJECTS : MINOR_PROJECTS).map((project) => (
             <ProjectCard key={project.id} project={project} />

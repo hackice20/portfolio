@@ -27,7 +27,7 @@ export default function Home() {
           </h2>
           <div className={styles.skillsGrid}>
             {SKILL_SECTIONS.map((section, idx) => (
-              <div key={idx} className={styles.skillCard}>
+              <div key={idx} className={`${styles.skillCard} frosted-glass dark:frosted-glass-dark levitate`}>
                 <h3 className={styles.skillCardTitle}>{section.title}</h3>
                 <div className={styles.skillCardIcons}>
                   {section.icons.map((Icon, iconIdx) => (

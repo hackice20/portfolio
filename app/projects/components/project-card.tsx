@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { type Project } from '../../projects.data';
-import styles from '../../projects.module.css';
+import { type Project } from '../projects.data';
+import styles from '../projects.module.css';
 
 export const ProjectCard = ({ project }: { project: Project }) => {
   return (
@@ -15,40 +15,38 @@ export const ProjectCard = ({ project }: { project: Project }) => {
         )}
       </div>
 
-      {project.media?.kind === 'image' && (
+      {project.media && (
         <div className={styles.mediaFrame}>
-          <Image
-            src={project.media.src}
-            alt={project.media.alt}
-            width={1600}
-            height={900}
-            sizes="(min-width: 768px) 640px, 100vw"
-            className="w-full h-auto rounded object-contain"
-          />
-        </div>
-      )}
-
-      {project.media?.kind === 'video' && (
-        <div className={styles.mediaFrame}>
-          <video
-            className="w-full h-auto rounded [&::-webkit-media-controls-pip-button]:hidden [&::-webkit-media-controls-enclosure]:overflow-hidden"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            controls={false}
-            disablePictureInPicture
-            controlsList="nodownload noplaybackrate nofullscreen noremoteplayback"
-            webkit-playsinline="true"
-            x5-video-player-type="h5"
-            x5-video-player-fullscreen="false"
-            x5-video-orientation="portraint"
-          >
-            {project.media.sources?.map((s, i) => (
-              <source key={i} src={s.src} type={s.type} />
-            ))}
-          </video>
+          {project.media.kind === 'image' ? (
+            <Image
+              src={project.media.src}
+              alt={project.media.alt}
+              width={1600}
+              height={900}
+              sizes="(min-width: 768px) 640px, 100vw"
+              className="w-full h-auto rounded object-contain"
+            />
+          ) : (
+            <video
+              className="w-full h-auto rounded [&::-webkit-media-controls-pip-button]:hidden [&::-webkit-media-controls-enclosure]:overflow-hidden"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              controls={false}
+              disablePictureInPicture
+              controlsList="nodownload noplaybackrate nofullscreen noremoteplayback"
+              webkit-playsinline="true"
+              x5-video-player-type="h5"
+              x5-video-player-fullscreen="false"
+              x5-video-orientation="portraint"
+            >
+              {project.media.sources?.map((s, i) => (
+                <source key={i} src={s.src} type={s.type} />
+              ))}
+            </video>
+          )}
         </div>
       )}
 
