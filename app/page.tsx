@@ -4,10 +4,22 @@ import { Terminal } from "lucide-react"
 import { FaJava, FaPython, FaJs, FaRust } from "react-icons/fa"
 import { SiCplusplus, SiTypescript, SiReact, SiExpress, SiNextdotjs, SiTailwindcss, SiMongodb, SiPostgresql, SiSqlite, SiGit, SiGithub, SiPostman, SiDocker, SiLinux, SiPrisma ,SiGo} from "react-icons/si"
 import { useTheme } from "next-themes"
+import { useEffect, useState } from "react"
 
 export default function Home() {
   const { theme } = useTheme()
   const isPookieMode = theme === "pookie"
+  const [age, setAge] = useState("")
+
+  useEffect(() => {
+    const birth = new Date("2004-05-20T00:00:00")
+    const frame = requestAnimationFrame(function tick() {
+      const ms = Date.now() - birth.getTime()
+      setAge((ms / (365.25 * 24 * 60 * 60 * 1000)).toFixed(9))
+      requestAnimationFrame(tick)
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [])
 
   return (
     <main className="min-h-screen flex items-center justify-center p-3 md:p-8 font-mono" id="top">
@@ -19,6 +31,9 @@ export default function Home() {
           </h1>
           <p className="text-sm md:text-lg lg:text-xl text-muted-foreground mb-1 md:mb-2">
             i am a final year student, studying information technology.
+          </p>
+          <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
+            i am <span className="font-mono">{age}</span> years old.
           </p>
           <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
             mainly work in Web Dev, Gen AI and a bit of ML.
