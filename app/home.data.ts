@@ -24,7 +24,6 @@ export const HERO_COPY = {
   greeting: "hi, i am hackice20!",
   linePrefix: "i am a",
   lineSuffix: "yr old final year IT student, building in web dev, gen ai & a bit of ml.",
-  pookieMessage: "✨ pookie mode activated! ✨",
 }
 
 export type SkillSection = {
