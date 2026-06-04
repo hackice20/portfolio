@@ -1,11 +1,10 @@
 "use client"
 import { useEffect } from "react"
+import { RESUME_URL } from "./resume.constants"
 
 export default function ResumeRedirectPage() {
   useEffect(() => {
-    window.location.replace(
-      "https://drive.google.com/file/d/1-Eti3Hj972o-pz3XXmbYEEiaaf3sxSWv/view?usp=sharing"
-    )
+    window.location.replace(RESUME_URL)
   }, [])
 
   return (
