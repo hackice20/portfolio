@@ -17,8 +17,8 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="app-shell" id="top">
-      <div className="app-container-lg">
+    <main className="min-h-screen flex items-center justify-center p-3 md:p-8 font-mono" id="top">
+      <div className="max-w-6xl mx-auto w-full">
         {/* Hero Section */}
         <section className="text-center mb-4 md:mb-8">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">

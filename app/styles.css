@@ -4,11 +4,7 @@
 
 @layer utilities {
   .app-shell {
-    @apply min-h-screen flex items-center justify-center p-4 md:p-8 font-mono;
-  }
-
-  .app-shell-page {
-    @apply min-h-screen flex items-start justify-center pt-[114px] md:pt-[98px] p-4 md:p-8 font-mono;
+    @apply min-h-screen flex items-start justify-center p-4 md:p-8 font-mono;
   }
 
   .app-container {
@@ -16,26 +12,10 @@
   }
 
   .app-container-md {
-    @apply max-w-3xl mx-auto w-full;
+    @apply max-w-3xl;
   }
 
   .app-container-lg {
-    @apply max-w-6xl mx-auto w-full;
-  }
-
-  .page-intro {
-    @apply space-y-2;
-  }
-  
-  .page-title {
-    @apply text-3xl md:text-4xl font-bold;
-  }
-  
-  .page-subtitle {
-    @apply text-muted-foreground;
-  }
-  
-  .base-card {
-    @apply bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md;
+    @apply max-w-6xl;
   }
 }
