@@ -1,0 +1,33 @@
+.page {
+  @apply min-h-screen flex items-start justify-center pt-[114px] md:pt-[98px] p-4 md:p-8 font-mono;
+}
+.container {
+  @apply max-w-3xl mx-auto w-full space-y-6;
+}
+.intro {
+  @apply space-y-2;
+}
+.title {
+  @apply text-3xl md:text-4xl font-bold;
+}
+.subtitle {
+  @apply text-muted-foreground;
+}
+.list {
+  @apply space-y-4;
+}
+.card {
+  @apply p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md;
+}
+.cardHeader {
+  @apply flex items-baseline justify-between gap-3 mb-2;
+}
+.role {
+  @apply text-2xl font-semibold;
+}
+.company {
+  @apply text-sm text-muted-foreground;
+}
+.points {
+  @apply mt-2 text-muted-foreground list-disc pl-5;
+}

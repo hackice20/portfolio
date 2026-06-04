@@ -1,0 +1,30 @@
+.main {
+  @apply min-h-screen flex items-center justify-center p-3 md:p-8 font-mono;
+}
+.container {
+  @apply max-w-6xl mx-auto w-full;
+}
+.heroSection {
+  @apply text-center mb-4 md:mb-8;
+}
+.heroTitle {
+  @apply text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4;
+}
+.heroSubtitle {
+  @apply text-sm md:text-lg lg:text-xl text-muted-foreground;
+}
+.skillsSectionTitle {
+  @apply text-lg md:text-2xl font-bold text-center mb-3 md:mb-6;
+}
+.skillsGrid {
+  @apply grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4;
+}
+.skillCard {
+  @apply frosted-glass dark:frosted-glass-dark levitate p-2 md:p-4 rounded-xl space-y-1 md:space-y-3;
+}
+.skillCardTitle {
+  @apply font-bold text-center text-xs md:text-sm;
+}
+.skillCardIcons {
+  @apply flex flex-wrap justify-center gap-1 md:gap-2;
+}

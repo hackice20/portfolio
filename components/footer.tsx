@@ -3,7 +3,7 @@ import Image from "next/image"
 import { GithubIcon, LinkedinIcon, Mail } from "lucide-react"
 import { SOCIAL_LINKS } from "@/components/constants"
 import { cn } from "@/lib/utils"
-import { componentStyles } from "@/components/styles"
+import styles from "@/components/components.module.css"
 
 export function Footer() {
   const iconMap = {
@@ -22,25 +22,16 @@ export function Footer() {
   }
 
   return (
-    <footer className={cn(componentStyles.centeredFixed, "bottom-4 z-40")}> 
-      <div className={cn(componentStyles.glassContainer, "rounded-2xl px-4 md:px-6 py-3")}> 
-        <div className={componentStyles.footerIcons}>
-          {SOCIAL_LINKS.map((item) => (
-            <div key={item.href} className={componentStyles.footerIconWrap}>
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={componentStyles.footerIcon}
-              >
-                {iconMap[item.icon as keyof typeof iconMap]}
-              </a>
-
-              {/* Tooltip (activates only when this icon is hovered) */}
-              <span className={componentStyles.footerTooltip}>{item.label}</span>
+    <footer className={cn(styles.centeredFixed, styles.glassContainer, "bottom-4 z-50 rounded-full px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 dark:border-gray-700 w-auto")}>
+      <div className={styles.footerIcons}>
+        {SOCIAL_LINKS.map((item, idx) => (
+          <a key={idx} href={item.href} target="_blank" rel="noopener noreferrer" className={styles.footerIconWrap}>
+            <div className={styles.footerIcon}>
+              {iconMap[item.icon as keyof typeof iconMap]}
             </div>
-          ))}
-        </div>
+            <span className={styles.footerTooltip}>{item.label}</span>
+          </a>
+        ))}
       </div>
     </footer>
   )

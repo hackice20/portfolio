@@ -1,21 +1,21 @@
 import { BLOG_POSTS } from "./blogs.data"
 
-import { blogsClasses as classes } from "./blogs.styles";
+import styles from "./blogs.module.css";
 
 export default function Blogs() {
   return (
-    <main className={classes.container}>
-      <div className={classes.containerInner}>
+    <main className={styles.container}>
+      <div className={styles.containerInner}>
         <section className="space-y-4">
           {BLOG_POSTS.map((post) => (
-            <div key={post.href} className={classes.card}>
-              <h3 className={classes.title}>{post.title}</h3>
-              <p className={classes.description}>{post.description}</p>
+            <div key={post.href} className={styles.card}>
+              <h3 className={styles.title}>{post.title}</h3>
+              <p className={styles.description}>{post.description}</p>
               <a
                 href={post.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={classes.cta}
+                className={styles.cta}
               >
                 {post.cta}
               </a>
