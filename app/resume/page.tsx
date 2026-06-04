@@ -8,7 +8,7 @@ export default function ResumeRedirectPage() {
   }, [])
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="app-shell">
       <p className="text-sm text-muted-foreground">Redirecting to resume…</p>
     </div>
   )
