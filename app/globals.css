@@ -199,6 +199,18 @@
       0 25px 25px -12px rgba(0, 0, 0, 0.1);
   }
 
+  .dark .levitate {
+    box-shadow: 
+      0 15px 35px -5px rgba(0, 0, 0, 0.8),
+      0 10px 15px -5px rgba(0, 0, 0, 0.5);
+  }
+
+  .dark .levitate:hover {
+    box-shadow: 
+      0 30px 60px -12px rgba(0, 0, 0, 0.9),
+      0 25px 30px -12px rgba(0, 0, 0, 0.7);
+  }
+
   .frosted-glass {
     /* Fallback for browsers that don't support backdrop-filter */
     background: rgba(255, 255, 255, 0.1);
@@ -210,8 +222,8 @@
 
   .frosted-glass-dark {
     /* Fallback for browsers that don't support backdrop-filter */
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     /* Safari-specific backdrop filter */
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     backdrop-filter: blur(16px) saturate(180%);
