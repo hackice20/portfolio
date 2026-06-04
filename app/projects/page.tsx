@@ -119,7 +119,7 @@ export default function Projects() {
       <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6 md:space-y-8">
         <section className="space-y-2">
           <h1 className="text-3xl md:text-4xl font-bold">projects</h1>
-          <p className="text-muted-foreground">Here are some of the projects I've been working on:</p>
+          <p className="text-muted-foreground">Here are some of the projects I&apos;ve been working on:</p>
         </section>
 
         <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4 mt-4">

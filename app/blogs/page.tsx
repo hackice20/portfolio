@@ -8,7 +8,7 @@ export default function Blogs() {
               The Journey of a Sentence Through a Transformer
             </h3>
             <p className="text-sm md:text-base mb-3 md:mb-4">
-              Explore how a simple sentence navigates through the layers of a Transformer model, unraveling the complexities of attention mechanisms and deep learning processes. This article provides an insightful walkthrough of the Transformer's architecture and its application in natural language processing tasks.
+              Explore how a simple sentence navigates through the layers of a Transformer model, unraveling the complexities of attention mechanisms and deep learning processes. This article provides an insightful walkthrough of the Transformer&apos;s architecture and its application in natural language processing tasks.
             </p>
             <a
               href="https://medium.com/@yashkam431/the-journey-of-a-sentence-through-a-transformer-434902aafb03"
