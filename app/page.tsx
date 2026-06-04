@@ -29,14 +29,8 @@ export default function Home() {
           <h1 className={`text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 ${isPookieMode ? 'pookie-text pookie-sparkle' : ''}`}>
             hi, i am hackice20!
           </h1>
-          <p className="text-sm md:text-lg lg:text-xl text-muted-foreground mb-1 md:mb-2">
-            i am a final year student, studying information technology.
-          </p>
           <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
-            i am <span className="font-mono">{age}</span> years old.
-          </p>
-          <p className="text-sm md:text-lg lg:text-xl text-muted-foreground">
-            mainly work in Web Dev, Gen AI and a bit of ML.
+            i am a <span className="font-mono">{age}</span>yr old final year IT student, building in web dev, gen ai & a bit of ml.
           </p>
           {isPookieMode && (
             <p className="text-base md:text-xl mt-2 md:mt-4 pookie-text">
