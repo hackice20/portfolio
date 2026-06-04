@@ -22,8 +22,9 @@ export function Footer() {
   }
 
   return (
-    <footer className={cn(styles.centeredFixed, styles.glassContainer, "frosted-glass dark:frosted-glass-dark levitate bottom-4 z-50 rounded-full px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 dark:border-gray-700 w-auto")}>
-      <div className={styles.footerIcons}>
+    <footer className={cn(styles.centeredFixed, "bottom-4 z-50")}>
+      <div className={cn(styles.glassContainer, "frosted-glass dark:frosted-glass-dark levitate rounded-full px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 dark:border-gray-700 w-auto")}>
+        <div className={styles.footerIcons}>
         {SOCIAL_LINKS.map((item, idx) => (
           <a key={idx} href={item.href} target="_blank" rel="noopener noreferrer" className={`group ${styles.footerIconWrap}`}>
             <div className={styles.footerIcon}>
@@ -32,6 +33,7 @@ export function Footer() {
             <span className={styles.footerTooltip}>{item.label}</span>
           </a>
         ))}
+        </div>
       </div>
     </footer>
   )

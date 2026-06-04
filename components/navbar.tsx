@@ -10,10 +10,11 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <nav className={cn(styles.centeredFixed, styles.glassContainer, "frosted-glass dark:frosted-glass-dark levitate top-4 z-50 rounded-full px-4 sm:px-6 py-2 sm:py-3 border-2 border-gray-300 dark:border-gray-700 max-w-[90vw] sm:max-w-fit")}
-      style={{ WebkitBackfaceVisibility: "hidden" }}
-    >
-      <ul className={styles.navLinks}>
+    <nav className={cn(styles.centeredFixed, "top-4 z-50")}>
+      <div className={cn(styles.glassContainer, "frosted-glass dark:frosted-glass-dark levitate rounded-full px-4 sm:px-6 py-2 sm:py-3 border-2 border-gray-300 dark:border-gray-700 max-w-[90vw] sm:max-w-fit")}
+        style={{ WebkitBackfaceVisibility: "hidden" }}
+      >
+        <ul className={styles.navLinks}>
         {NAV_LINKS.map((link) => (
           <li key={link.href} className={link.isBrand ? styles.navBrand : ""}>
             <Link
@@ -37,7 +38,8 @@ export function Navbar() {
           <Moon className="absolute h-3 w-3 sm:h-4 sm:w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>
         </button>
-      </ul>
+        </ul>
+      </div>
     </nav>
   )
 }
