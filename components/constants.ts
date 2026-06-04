@@ -29,7 +29,7 @@ export const SOCIAL_LINKS = [
     icon: "github",
   },
   {
-    href: "https://www.linkedin.com/in/yash-kamble205/",
+    href: "https://www.linkedin.com/in/yash-kamble2/",
     label: "LinkedIn",
     icon: "linkedin",
   },
