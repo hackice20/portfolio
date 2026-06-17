@@ -19,15 +19,24 @@
 .card {
   @apply p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md;
 }
-.cardHeader {
-  @apply flex items-baseline justify-between gap-3 mb-2;
+.cardTop {
+  @apply flex justify-between items-start gap-4;
 }
 .role {
-  @apply text-2xl font-semibold;
+  @apply text-2xl font-semibold shrink-0;
 }
-.company {
-  @apply text-sm text-muted-foreground;
+.meta {
+  @apply flex flex-col items-end text-right text-sm text-muted-foreground shrink-0;
+}
+.companyLine {
+  @apply font-medium text-foreground;
+}
+.period {
+  @apply mt-0.5;
+}
+.location {
+  @apply mt-0.5;
 }
 .points {
-  @apply mt-2 text-muted-foreground list-disc pl-5;
+  @apply mt-3 text-muted-foreground list-disc pl-5;
 }
