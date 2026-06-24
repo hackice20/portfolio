@@ -1,5 +1,5 @@
 .page {
-  @apply min-h-screen flex items-start justify-center pt-[114px] md:pt-[98px] p-4 md:p-8 font-mono;
+  @apply min-h-screen flex items-start justify-center pt-[114px] md:pt-[98px] p-4 md:p-8 pb-20 font-mono;
 }
 .container {
   @apply max-w-3xl mx-auto w-full space-y-6;
@@ -20,13 +20,13 @@
   @apply p-6 bg-card text-card-foreground border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md;
 }
 .cardTop {
-  @apply flex justify-between items-start gap-4;
+  @apply flex flex-col md:flex-row md:justify-between md:items-start gap-2 md:gap-4;
 }
 .role {
   @apply text-2xl font-semibold shrink-0;
 }
 .meta {
-  @apply flex flex-col items-end text-right text-sm text-muted-foreground shrink-0;
+  @apply flex flex-col items-start text-left md:items-end md:text-right text-sm text-muted-foreground md:shrink-0;
 }
 .companyLine {
   @apply font-medium text-foreground;
